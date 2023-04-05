@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Editor directories and files
-_md
+/.md
 package-lock.json
 oldPortfolio
