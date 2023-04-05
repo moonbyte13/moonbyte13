@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 
-function Header({ header, activeSection, handleNavItemClick }) {
+function Header({ header, activeSection, handleNavItemClick}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  const handleHeaderClick = (event) => {
+    if(event.target.nodeName !== "H1") {
+      window.location.reload();
+    }
+  }
+
   return (
-    <header className="flex flex-col lg:flex-row lg:justify-between self-center p-6 z-10">
+    <header 
+      className="flex flex-col lg:flex-row lg:justify-between self-center p-6 z-10"
+      onClick={handleHeaderClick}
+    >
       <h1 
         className="flex w-max font-bold text-4xl md:text-6xl lg:text-7xl self-center"
         onClick={(event) => handleNavItemClick('secret', event)}

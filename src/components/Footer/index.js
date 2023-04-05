@@ -75,7 +75,7 @@ function Footer() {
             </svg>
           </a>
         </li>
-        <li className="footerLiItm hover:opacity-25 transition-opacity duration-500 ease-in-out">
+{/*         <li className="footerLiItm hover:opacity-25 transition-opacity duration-500 ease-in-out">
           <a href={footer.link3} target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ function Footer() {
               </g>
             </svg>
           </a>
-        </li>
+        </li> */}
       </ul>
     </footer>
   );

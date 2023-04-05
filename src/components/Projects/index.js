@@ -44,11 +44,11 @@ function Projects () {
     },
     {
       id: 6,
-      name: 'My Career',
-      description: 'goals? this was my project 2 in the bootcamp',
-      deployedLink: 'https://google.com',
-      githubLink: 'https://github.com',
-      image: 'https://i.imgur.com/1TA2xfT.png',
+      name: 'Memes Against Humanity',
+      description: 'A meme generator app that lets you discover and collect the latest and greatest memes from Giphy.',
+      deployedLink: 'https://memes-against-humanity.herokuapp.com',
+      githubLink: 'https://github.com/moonphase13/memes-against-humanity',
+      image: 'https://i.imgur.com/zKhA50S.png',
     },
   ]);
 
