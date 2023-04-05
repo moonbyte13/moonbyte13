@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-function ContactForm() {
+function ContactForm () {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,8 @@ function ContactForm() {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     const errors = Object.values(formErrors);
@@ -49,23 +53,61 @@ function ContactForm() {
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleRecaptchaChange = async (token) => {
+    console.log("reCAPTCHA token:", token);
+    await handleFormSubmit(null, token);
+  };
+  
+
+  const handleFormSubmit = async (event, token) => {
     event.preventDefault();
     if (formIsValid) {
-      // DO SOMETHING WITH THE FORM DATA
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
-      setFormErrors({
-        name: '',
-        email: '',
-        message: '',
-      });
-      setFormIsValid(false);
+      try {
+        // Verify reCAPTCHA challenge
+        const response = await fetch('/verify-recaptcha', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+        const data = await response.json();
+        if (!data.success) {
+          throw new Error('reCAPTCHA challenge failed');
+        }
+        
+        // Send email
+        const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+        const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+        emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
+        emailjs.send(serviceId, templateId, {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        }, userId);
+    
+        console.log('Email sent successfully.');
+    
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setFormErrors({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setFormIsValid(false);
+        recaptchaRef.current.reset();
+      } catch (error) {
+        console.log('Error occurred while sending email: ', error);
+      }
     }
   };
+  
+  
 
   const inputFields = [
     { name: "name", type: "text", label: "Name" },
@@ -75,8 +117,16 @@ function ContactForm() {
 
   return (
     <div className="flex flex-col justify-center items-center z-0">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">Contact Me</h2>
-      <form className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12" onSubmit={handleFormSubmit}>
+      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">
+        Contact Me
+      </h2>
+      <form
+        action="?"
+        method="POST"
+        className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12"
+        onSubmit={handleFormSubmit}
+        data-size="invisible"
+      >
         {inputFields.map(({ name, type, label }) => (
           <React.Fragment key={name}>
             <label htmlFor={name}>{label}</label>
@@ -91,13 +141,28 @@ function ContactForm() {
               autoComplete="off"
               required={name === "name" || name === "email" || name === "message"}
             />
-            {formErrors[name] && <span className="text-red-500 text-sm mb-5 ml-2">{formErrors[name]}</span>}
+            {formErrors[name] && (
+              <span className="text-red-500 text-sm mb-5 ml-2">
+                {formErrors[name]}
+              </span>
+            )}
           </React.Fragment>
         ))}
-        <button type="submit" className="border-bk border-2 rounded-md p-2 w-fit self-center lg:self-start" disabled={!formIsValid}>
+        <button
+          id="submit"
+          type="submit"
+          className="border-bk border-2 rounded-md p-2 w-fit self-center lg:self-start"
+          disabled={!formIsValid}
+        >
           Submit
         </button>
       </form>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey='6LfNjV0lAAAAAPlop3cJ_83sAL0IrvXgDwPx9M4G'
+        size="invisible"
+        onChange={handleRecaptchaChange}
+      />
     </div>
   );
 }
