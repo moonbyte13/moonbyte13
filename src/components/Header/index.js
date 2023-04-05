@@ -8,7 +8,7 @@ function Header({ header, activeSection, handleNavItemClick}) {
   }
 
   const handleHeaderClick = (event) => {
-    if(event.target.nodeName !== "H1") {
+    if(event.target.nodeName !== "H1" && event.target.nodeName !== "A") {
       window.location.reload();
     }
   }
