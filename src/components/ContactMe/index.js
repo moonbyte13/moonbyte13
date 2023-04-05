@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 function ContactForm () {
   const [formData, setFormData] = useState({
@@ -16,13 +15,6 @@ function ContactForm () {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
-
-  const recaptchaRef = useRef(null);
-
-  useEffect(() => {
-    const errors = Object.values(formErrors);
-    setFormIsValid(errors.every(error => error === ''));
-  }, [formErrors]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -53,39 +45,20 @@ function ContactForm () {
     });
   };
 
-  const handleRecaptchaChange = async (token) => {
-    console.log("reCAPTCHA token:", token);
-    await handleFormSubmit(null, token);
-  };
-  
-
-  const handleFormSubmit = async (event = null, token) => {
-    event && event.preventDefault();
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     if (formIsValid) {
       try {
-        // Verify reCAPTCHA challenge
-        const response = await fetch('/verify-recaptcha', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ token }),
-        });
-        const data = await response.json();
-        if (!data.success) {
-          throw new Error('reCAPTCHA challenge failed');
-        }
-        
         // Send email
         const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
         const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
         const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-        emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
-        emailjs.send(serviceId, templateId, {
+        emailjs.init(userId);
+        await emailjs.send(serviceId, templateId, {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message
-        }, userId);
+        });
     
         console.log('Email sent successfully.');
     
@@ -100,13 +73,11 @@ function ContactForm () {
           message: '',
         });
         setFormIsValid(false);
-        recaptchaRef.current.reset();
       } catch (error) {
         console.log('Error occurred while sending email: ', error);
       }
     }
   };
-  
   
 
   const inputFields = [
@@ -121,14 +92,11 @@ function ContactForm () {
         Contact Me
       </h2>
       <form
-        action="?"
-        method="POST"
         className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12"
         onSubmit={handleFormSubmit}
-        data-size="invisible"
       >
         {inputFields.map(({ name, type, label }) => (
-          <React.Fragment key={name}>
+          <div key={name}>
             <label htmlFor={name}>{label}</label>
             <input
               type={type}
@@ -146,7 +114,7 @@ function ContactForm () {
                 {formErrors[name]}
               </span>
             )}
-          </React.Fragment>
+          </div>
         ))}
         <button
           id="submit"
@@ -157,14 +125,9 @@ function ContactForm () {
           Submit
         </button>
       </form>
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey='6LfNjV0lAAAAAPlop3cJ_83sAL0IrvXgDwPx9M4G'
-        size="invisible"
-        onChange={handleRecaptchaChange}
-      />
     </div>
   );
+  
 }
 
 export default ContactForm;
