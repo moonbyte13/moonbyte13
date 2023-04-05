@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import emailjs from 'emailjs-com';
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -49,23 +49,38 @@ function ContactForm() {
     });
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
     if (formIsValid) {
-      // DO SOMETHING WITH THE FORM DATA
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
-      setFormErrors({
-        name: '',
-        email: '',
-        message: '',
-      });
-      setFormIsValid(false);
+      try {
+        const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+        const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+        const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+        
+        await emailjs.send(serviceId, templateId, {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        }, userId);
+    
+        console.log('Email sent successfully.');
+    
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setFormErrors({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setFormIsValid(false);
+      } catch (error) {
+        console.log('Error occurred while sending email: ', error);
+      }
     }
-  };
+  };  
 
   const inputFields = [
     { name: "name", type: "text", label: "Name" },
