@@ -59,8 +59,8 @@ function ContactForm () {
   };
   
 
-  const handleFormSubmit = async (event, token) => {
-    event.preventDefault();
+  const handleFormSubmit = async (event = null, token) => {
+    event && event.preventDefault();
     if (formIsValid) {
       try {
         // Verify reCAPTCHA challenge
