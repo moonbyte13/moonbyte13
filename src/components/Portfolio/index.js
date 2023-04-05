@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import AboutMe from './AboutMe';
-import Projects from './Projects';
-import ContactMe from './ContactMe';
-import Resume from './Resume';
-import Secret from './Secret';
+import Header from '../Header/';
+import Footer from '../Footer/';
+import AboutMe from '../AboutMe/';
+import Projects from '../Projects/';
+import ContactMe from '../ContactMe/';
+import Resume from '../Resume/';
+import Secret from '../Secret/';
 
 function Portfolio() {
   const [header] = useState({
