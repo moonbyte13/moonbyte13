@@ -52,7 +52,7 @@ function Header({ header, activeSection, handleNavItemClick}) {
               className={activeSection === 'projects' ? 'active' : ''}
               onClick={(event) => handleNavItemClick('projects', event)}
             >
-              Portfolio
+              Projects
             </a>
           </li>
           <li className="navLiItm">
