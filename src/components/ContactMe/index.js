@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import emailjs from 'emailjs-com';
-let grecaptcha;
+import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-async function ContactForm () {
+function ContactForm () {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +16,8 @@ async function ContactForm () {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     const errors = Object.values(formErrors);
@@ -51,24 +53,30 @@ async function ContactForm () {
     });
   };
 
-  function validate(event) {
-    event.preventDefault();
-    if (!document.getElementById('field').value) {
-      alert("You must add text to the required field");
-    } else {
-      grecaptcha.execute();
-    }
-  }
+  const handleRecaptchaChange = async (token) => {
+    console.log("reCAPTCHA token:", token);
+    await handleFormSubmit(null, token);
+  };
+  
 
-  const onload = () => {
-    var element = document.getElementById('submit');
-    element.onclick = validate;
-  }
-  const handleFormSubmit = async (token, event) => {
-    onload();
+  const handleFormSubmit = async (event, token) => {
     event.preventDefault();
     if (formIsValid) {
       try {
+        // Verify reCAPTCHA challenge
+        const response = await fetch('/verify-recaptcha', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+        const data = await response.json();
+        if (!data.success) {
+          throw new Error('reCAPTCHA challenge failed');
+        }
+        
+        // Send email
         const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
         const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
         const userId = process.env.REACT_APP_EMAILJS_USER_ID;
@@ -92,11 +100,13 @@ async function ContactForm () {
           message: '',
         });
         setFormIsValid(false);
+        recaptchaRef.current.reset();
       } catch (error) {
         console.log('Error occurred while sending email: ', error);
       }
     }
   };
+  
   
 
   const inputFields = [
@@ -105,22 +115,56 @@ async function ContactForm () {
     { name: "message", type: "textarea", label: "Message" },
   ];
 
-return (
-  <div className="flex flex-col justify-center items-center z-0">
-    <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">Contact Me</h2>
-    <form className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12" onSubmit={handleFormSubmit} data-size="invisible">
-      {inputFields.map(({ name, type, label }) => (
-        <React.Fragment key={name}>
-          <label htmlFor={name}>{label}</label>
-          <input type={type} name={name} value={formData[name]} onChange={handleInputChange} className={`border-bk border-2 rounded-md p-2 mb-5 mt-2 bg-transparent ${formErrors[name] && "border-red-500"}`} autoComplete="off" required={name === "name" || name === "email" || name === "message"} />
-          {formErrors[name] && <span className="text-red-500 text-sm mb-5 ml-2">{formErrors[name]}</span>}
-        </React.Fragment>
-      ))}
-      <button id="submit" type="submit" className="border-bk border-2 rounded-md p-2 w-fit self-center lg:self-start g-recaptcha" disabled={!formIsValid} data-sitekey='6LfNjV0lAAAAAPlop3cJ_83sAL0IrvXgDwPx9M4G' data-callback={handleFormSubmit}>Submit</button>
-    </form>
-  </div>
-);
-
+  return (
+    <div className="flex flex-col justify-center items-center z-0">
+      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">
+        Contact Me
+      </h2>
+      <form
+        action="?"
+        method="POST"
+        className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12"
+        onSubmit={handleFormSubmit}
+        data-size="invisible"
+      >
+        {inputFields.map(({ name, type, label }) => (
+          <React.Fragment key={name}>
+            <label htmlFor={name}>{label}</label>
+            <input
+              type={type}
+              name={name}
+              value={formData[name]}
+              onChange={handleInputChange}
+              className={`border-bk border-2 rounded-md p-2 mb-5 mt-2 bg-transparent ${
+                formErrors[name] && "border-red-500"
+              }`}
+              autoComplete="off"
+              required={name === "name" || name === "email" || name === "message"}
+            />
+            {formErrors[name] && (
+              <span className="text-red-500 text-sm mb-5 ml-2">
+                {formErrors[name]}
+              </span>
+            )}
+          </React.Fragment>
+        ))}
+        <button
+          id="submit"
+          type="submit"
+          className="border-bk border-2 rounded-md p-2 w-fit self-center lg:self-start"
+          disabled={!formIsValid}
+        >
+          Submit
+        </button>
+      </form>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey='6LfNjV0lAAAAAPlop3cJ_83sAL0IrvXgDwPx9M4G'
+        size="invisible"
+        onChange={handleRecaptchaChange}
+      />
+    </div>
+  );
 }
 
 export default ContactForm;
