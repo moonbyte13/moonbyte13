@@ -69,3 +69,16 @@ footer li {
 [data-darkreader-inline-fill] {
   fill: #fff !important;
 }
+
+.group-hover\:opacity-25:hover,
+.group-hover\:opacity-25:focus {
+  opacity: 25%;
+}
+
+@media (hover: none) {
+  .group-hover\:opacity-25:hover,
+  .group-hover\:opacity-25:focus {
+    opacity: 100% !important;
+  }
+}
+
