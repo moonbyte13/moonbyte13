@@ -20,17 +20,21 @@ function Header({ header, activeSection, handleNavItemClick}) {
       >{header.name}</h1>
       <button
         type="button"
-        className="block lg:hidden border border-gray-400 rounded mt-5 p-1 w-fit self-center"
+        className={
+          `block lg:hidden border border-[#808080] rounded mt-5 p-1 w-fit self-center ${
+          window.matchMedia('(hover: none)').matches ? 'bg-gray-200' : 'bg-transparent hover:bg-gray-200'
+        }`}
         onClick={toggleMenu}
       >
         <svg className="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           {isMenuOpen ? (
-            <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            <path fill="none" stroke="#808080" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           ) : (
-            <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path fill="none" stroke="#808080" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
           )}
         </svg>
       </button>
+
       <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:block self-center text-lg`}>
         <ul className="flex flex-col md:flex-col lg:flex-row min-w-max">
           <li className="navLiItm mt-2 lg:mt-0">

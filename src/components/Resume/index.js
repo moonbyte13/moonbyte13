@@ -11,6 +11,8 @@ function Resume() {
       'responsive design',
       'React',
       'Bootstrap',
+      'TailwindCSS',
+      'and more as I keep learning everyday'
     ],
     backEndProficiencies: [
       'APIs', 

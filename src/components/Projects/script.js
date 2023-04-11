@@ -12,7 +12,7 @@ function Projects () {
       return () => window.removeEventListener('touchstart', onTouchStart);
     }, []);
   
-    return (isTouchDevice ? true : false);
+    return <div>{isTouchDevice ? true : false}</div>;
   }
 
   const [projects] = useState([
@@ -72,45 +72,64 @@ function Projects () {
 
   return (
     <div 
-      className={``}
+      className="flex flex-col justify-center items-center z-0"
     >
       <h2 
-        className={`text-3xl md:text-4xl lg:text-5xl lg:text-start`}
+        className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10"
       >
         Projects
       </h2>
 
       <div 
-        className={`grid grid-cols-1 justify-items-center p-2 lg:grid-cols-2 gap-4 md:p-4`}
+        className="grid lg:grid-cols-2 justify-items-center place-items-center"
       >
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className={`group relative grid`}
+            className="projCard relative m-4 group flex flex-col w-fit"
           >
             <div 
-              className={`${
-                TouchDetector() ? `opacity-25` : `group-hover:opacity-25`
-                } border-4 border-transparent rounded-lg overflow-hidden transition-opacity duration-300 ease-in-out`
+              className={
+                ('(hover: none)' in window.matchMedia ? 'opacity-25' : 'opacity-100 group-hover:opacity-25 transition duration-500 ease-in-out w-fit')
               }
             >
               <img 
-                src={project.image} 
-                alt={project.name} 
-                className={`h-full border-transparent rounded-lg`}
+                src={project.image} alt={project.name} 
+                className='imgCard border-transparent rounded-lg w-fit'
               />
             </div>
 
             <div 
-              className={`absolute top-0 p-4 h-full w-full ${TouchDetector() ? `opacity-100` : `opacity-0 group-hover:opacity-25`} transition-opacity duration-300 ease-in-out`}
+              className={
+                (('(hover: none)' in window.matchMedia ? 'projectText absolute px-16' : 'projectText absolute px-6')) + 'z-10 w-fit h-full flex flex-col justify-center self-start self-center'
+              }
             >
-              <div
-                className={`flex justify-end`}
+              <div 
+                className="cardLinks flex flex-col w-[100%] md:flex-row justify-center items-center self-start"
               >
                 <a 
-                href={project.githubLink}
-                target='_blank' 
-                rel='noopener noreferrer'>
+                  href={project.deployedLink} 
+                  className={
+                    (('(hover: none)' in window.matchMedia && 'opacity-full') || 'self-center opacity-100 group-hover:opacity-25 hover:!opacity-full transition duration-500 ease-in-out')
+                  } 
+                  target='_blank' 
+                  rel='noopener noreferrer'>
+
+                  <h3 
+                    className={
+                      ((('(hover: none)' in window.matchMedia && 'opacity-full name:opacity-full text-3xl') || 'group-hover/name:opacity-full text-2xl') + ' text-center font-bold transition duration-500 ease-in-out w-fit')
+                    }>
+                      {project.name}
+                    </h3>
+                </a>
+
+                <a 
+                  href={project.githubLink}
+                  className={
+                    (('(hover: none)' in window.matchMedia && 'pl-5 opacity-fill') || 'py-2 opacity-100 group-hover:opacity-25 hover:!opacity-full transition duration-500 ease-in-out')
+                  } 
+                  target='_blank' 
+                  rel='noopener noreferrer'>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -143,29 +162,19 @@ function Projects () {
                   </svg>
                 </a>
               </div>
-              <div
-                className={`flex flex-col h-3/4 justify-center`}
+              <p className={
+                (
+                  (
+                    (
+                      '(hover: none)' in window.matchMedia && 'opacity-fill'
+                    ) || 'text-sm text-center self-center opacity-fill group-hover:opacity-100') + ' w-fit flex justify-start transition-opacity duration-500 ease-in-out'
+                )
+              }
               >
-                <div
-                  className={`flex justify-center lg:justify-start`}
-                >
-                  <a 
-                    href={project.deployedLink} 
-                    className={``} 
-                    target='_blank' 
-                    rel='noopener noreferrer'>
-
-                    <h3 
-                      className={`text-2xl md:text-3xl lg:text-4xl`}>
-                        {project.name}
-                      </h3>
-                  </a>
-                </div>
-                <p className={`pt-1 w-full text-center lg:text-start`}
-                >
-                  {project.description}
-                </p>
-              </div>
+                {
+                  project.description
+                }
+              </p>
             </div>
           </div>        
         ))}
