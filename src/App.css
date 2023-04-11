@@ -51,6 +51,18 @@ li {
   margin: 0 1em;
 }
 
+.navLiItm a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #808080;
+}
+
+.navLiItm a:hover {
+  color: #d400ff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #7789ff;
+}
+
 .navLiItm a.active {
   color: #7700ff;
   font-weight: bold;
@@ -59,26 +71,5 @@ li {
 
 header li,
 footer li {
-  list-style: none;
+  list-style-type: none;
 }
-
-.projectText::hover {
-  display: flex;
-}
-
-[data-darkreader-inline-fill] {
-  fill: #fff !important;
-}
-
-.group-hover\:opacity-25:hover,
-.group-hover\:opacity-25:focus {
-  opacity: 25%;
-}
-
-@media (hover: none) {
-  .group-hover\:opacity-25:hover,
-  .group-hover\:opacity-25:focus {
-    opacity: 100% !important;
-  }
-}
-
