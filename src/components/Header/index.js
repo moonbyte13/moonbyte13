@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css'
+import { ReactComponent as Logo } from './logo.svg';
 
 function Header({ header, activeSection, handleNavItemClick}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,10 +12,12 @@ function Header({ header, activeSection, handleNavItemClick}) {
     }
   }
 
+
   return (
     <header 
       className=""
     >
+      <Logo/>
       <h1 
         className=""
       >{header.name}</h1>

@@ -1,0 +1,404 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 536 368'>
+  <style>
+
+    :root {
+      --color-0: #b39ddb;
+      --color-1: #89c4a7;
+      --color-star: #d6c17a;
+    }
+
+    text {
+      font-family:'Roboto Mono', monospace;
+      font-size:0px;
+    }
+
+    text tspan {
+      font-size: 14px;
+    }
+
+    text .star {
+      fill:var(--color-star);
+    }
+
+    text .tspan-0 {
+      fill:var(--color-0);
+    }
+
+    text .tspan-1 {
+      fill:var(--color-1);
+    }
+    
+    rect.backdrop {
+      stroke:none;
+      fill:rgba(255,255,255,0);
+    }
+    
+    .filled {
+      fill:black;
+    }
+    
+    .end_marked_arrow {
+      marker-end:url(#arrow);
+    }
+    
+    .start_marked_arrow {
+      marker-start:url(#arrow);
+    }
+    
+    .end_marked_diamond {
+      marker-end:url(#diamond);
+    }
+    
+    .start_marked_diamond {
+      marker-start:url(#diamond);
+    }
+    
+    .end_marked_circle {
+      marker-end:url(#circle);
+    }
+    
+    .start_marked_circle {
+      marker-start:url(#circle);
+    }
+    
+    .end_marked_open_circle {
+      marker-end:url(#open_circle);
+    }
+    
+    .start_marked_open_circle {
+      marker-start:url(#open_circle);
+    }
+    
+    .end_marked_big_open_circle {
+      marker-end:url(#big_open_circle);
+    }
+    
+    .start_marked_big_open_circle {
+      marker-start:url(#big_open_circle);
+    }
+
+  </style>
+  <defs>
+    <marker 
+      id='arrow' 
+      viewBox='-2 -2 8 8' 
+      refX='4' 
+      refY='2' 
+      markerWidth='7' 
+      markerHeight='7' 
+      orient='auto-start-reverse'
+    >
+      <polygon points='0,0 0,4 4,2 0,0'></polygon>
+    </marker>
+
+    <marker 
+      id='diamond' 
+      viewBox='-2 -2 8 8' 
+      refX='4' 
+      refY='2' 
+      markerWidth='7' 
+      markerHeight='7' 
+      orient='auto-start-reverse'
+    >
+      <polygon points='0,2 2,0 4,2 2,4 0,2'></polygon>
+    </marker>
+    
+    <marker 
+      id='circle' 
+      viewBox='0 0 8 8' 
+      refX='4' 
+      refY='4' 
+      markerWidth='7' 
+      markerHeight='7' 
+      orient='auto-start-reverse'
+    >
+      <circle cx='4' cy='4' r='2' class='filled'></circle>
+    </marker>
+    
+    <marker 
+      id='open_circle' 
+      viewBox='0 0 8 8' 
+      refX='4' 
+      refY='4' 
+      markerWidth='7' 
+      markerHeight='7' 
+      orient='auto-start-reverse'
+    >
+      <circle cx='4' cy='4' r='2' class='bg_filled'></circle>
+    </marker>
+    
+    <marker 
+      id='big_open_circle' 
+      viewBox='0 0 8 8' 
+      refX='4' 
+      refY='4' 
+      markerWidth='7' 
+      markerHeight='7' 
+      orient='auto-start-reverse'
+    >
+      <circle cx='4' cy='4' r='3' class='bg_filled'></circle>
+    </marker>
+  </defs>
+
+  <rect 
+    class='backdrop' 
+    x='0' 
+    y='0' 
+    width='536' 
+    height='368'
+  ></rect>
+  
+  <text x='34' y='28' >
+    <tspan class='star'>*</tspan>
+  </text>
+
+  <text x='522' y='28' >
+    <tspan class='star'>*</tspan>
+  </text>
+
+  <text x='234' y='44' >
+    <tspan class='tspan-0'>0</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000</tspan>
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+  </text>
+  
+  <text x='202' y='60' >
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>00000</tspan>
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>000000000000</tspan>
+  </text>
+  
+  <text x='178' y='76' >
+    <tspan class='tspan-0'>000000</tspan>
+    <tspan class='tspan-1'>111</tspan>
+    <tspan class='tspan-0'>00000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000000</tspan>
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>000</tspan>
+  </text>
+  
+  <text x='162' y='92' >
+    <tspan class='tspan-0'>00000000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>00000000</tspan>
+  </text>
+  
+  <text x='386' y='92' >
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='146' y='108' >
+    <tspan class='tspan-0'>0000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>00000000000</tspan>
+  </text>
+  
+  <text x='418' y='108' >
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='138' y='124' >
+    <tspan class='tspan-0'>00000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000</tspan>
+  </text>
+  
+  <text x='250' y='124' >
+    <tspan class='tspan-0'>00</tspan>
+  </text>
+  
+  <text x='442' y='124' >
+    <tspan class='tspan-0'>00</tspan>
+  </text>
+  
+  <text x='130' y='140' >
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-0'>1</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='242' y='140' >
+    <tspan class='tspan-0'>00</tspan>
+  </text>
+  
+  <text x='458' y='140' >
+    <tspan class='tspan-1'>1</tspan>
+  </text>
+  
+  <text x='130' y='156' >
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='194' y='156' >
+    <tspan class='tspan-0'>00</tspan>
+  </text>
+  
+  <text x='218' y='156' >
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='122' y='172' >
+    <tspan class='tspan-0'>00</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='234' y='172' >
+    <tspan class='tspan-0'>000</tspan>
+  </text>
+  
+  <text x='122' y='188' >
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000</tspan>
+  </text>
+  
+  <text x='218' y='188' >
+    <tspan class='tspan-0'>0000000</tspan>
+  </text>
+  
+  <text x='122' y='204' >
+    <tspan class='tspan-0'>00</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='210' y='204' >
+    <tspan class='tspan-0'>0000000000</tspan>
+  </text>
+  
+  <text x='122' y='220' >
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='178' y='220' >
+    <tspan class='tspan-0'>0</tspan>
+  </text>
+  
+  <text x='194' y='220' >
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='250' y='220' >
+    <tspan class='tspan-0'>000000</tspan>
+  </text>
+  
+  <text x='130' y='236' >
+    <tspan class='tspan-0'>00</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='202' y='236' >
+    <tspan class='tspan-0'>0000000</tspan>
+  </text>
+  
+  <text x='130' y='252' >
+    <tspan class='tspan-0'>00000000</tspan>
+  </text>
+  
+  <text x='458' y='252' >
+    <tspan class='tspan-1'>1</tspan>
+  </text>
+  
+  <text x='138' y='268' >
+    <tspan class='tspan-0'>00</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000</tspan>
+  </text>
+  
+  <text x='442' y='268' >
+    <tspan class='tspan-0'>0</tspan>
+    <tspan class='tspan-1'>1</tspan>
+  </text>
+  
+  <text x='146' y='284' >
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000000000000</tspan>
+  </text>
+  
+  <text x='418' y='284' >
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>00</tspan>
+  </text>
+  
+  <text x='162' y='300' >
+    <tspan class='tspan-0'>0</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>000000000</tspan>
+  </text>
+  
+  <text x='386' y='300' >
+    <tspan class='tspan-0'>00</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000</tspan>
+  </text>
+  
+  <text x='178' y='316' >
+    <tspan class='tspan-0'>000000000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>00000000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>000000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000</tspan>
+  </text>
+  
+  <text x='202' y='332' >
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000</tspan>
+    <tspan class='tspan-1'>11</tspan>
+    <tspan class='tspan-0'>00000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>00000000</tspan>
+  </text>
+  
+  <text x='234' y='348' >
+    <tspan class='tspan-0'>000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0000000000</tspan>
+    <tspan class='tspan-1'>1</tspan>
+    <tspan class='tspan-0'>0</tspan>
+  </text>
+  
+  <text x='482' y='44' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='2' y='140' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='82' y='172' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='522' y='188' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='498' y='300' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='50' y='316' >
+    <tspan class='star'>*</tspan>
+  </text>
+  
+  <text x='178' y='348' >
+    <tspan class='star'>*</tspan>
+  </text>
+</svg>
