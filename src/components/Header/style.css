@@ -1,12 +1,3 @@
-line, path, circle, rect, polygon {
-  stroke:black;
-  stroke-width:2;
-  stroke-opacity:1;
-  fill-opacity:1;
-  stroke-linecap:round;
-  stroke-linejoin:miter;
-}
-
 text{
   user-select: none;
   font-family:'Roboto Mono';
@@ -74,6 +65,6 @@ rect.backdrop{
   marker-start:url(#big_open_circle);
 }
 
-svg {
+header svg {
   width: 25%;
 }

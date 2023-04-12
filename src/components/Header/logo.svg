@@ -8,11 +8,11 @@
     }
 
     text {
-      font-family:'Roboto Mono', monospace;
-      font-size:0px;
+      font-size: 0;
     }
 
     text tspan {
+      font-family:'Nunito', monospace;
       font-size: 14px;
     }
 
