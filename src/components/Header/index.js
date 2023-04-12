@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css'
 
 function Header({ header, activeSection, handleNavItemClick}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,11 +13,10 @@ function Header({ header, activeSection, handleNavItemClick}) {
 
   return (
     <header 
-      className="flex flex-col lg:flex-row lg:justify-between self-center p-6 z-10"
+      className=""
     >
       <h1 
-        className="flex w-fit font-bold text-4xl md:text-6xl lg:text-7xl self-center text-center"
-        onClick={(event) => handleNavItemClick('secret', event)}
+        className=""
       >{header.name}</h1>
       <button
         type="button"
@@ -35,8 +35,8 @@ function Header({ header, activeSection, handleNavItemClick}) {
         </svg>
       </button>
 
-      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:block self-center text-lg`}>
-        <ul className="flex flex-col md:flex-col lg:flex-row min-w-max">
+      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:block self-center min-w-max`}>
+        <ul className="flex flex-col md:flex-col lg:flex-row tracking-tight">
           <li className="navLiItm mt-2 lg:mt-0">
             <a
               href="/"
