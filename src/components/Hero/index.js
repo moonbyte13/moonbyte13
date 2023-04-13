@@ -3,6 +3,11 @@ import { ReactComponent as DD } from './dd.svg';
 import './style.css'
 
 function Hero() {
+  const scrollToABTSection = () => {
+    const element = document.getElementById('abtMeSect');
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="hero h-[100vh] flex-col justify-center mb-24">
       <div
@@ -32,6 +37,7 @@ function Hero() {
         >
           <DD 
             className='w-[3vw] hover:cursor-pointer'
+            onClick={scrollToABTSection}
           />
         </div>
 

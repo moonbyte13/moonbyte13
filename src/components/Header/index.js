@@ -4,6 +4,7 @@ import './style.css'
 import { ReactComponent as Logo } from './logo.svg';
 
 function Header() {
+
   const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
@@ -17,6 +18,11 @@ function Header() {
   const colors = ["#b39ddb", "#89c4a7", "#d6c17a"];
   const currentColor = colors[colorIndex];
 
+  const scrollToCNTSection = () => {
+    const element = document.getElementById('contactMeSection');
+    element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header 
       className="fixed top-0 left-0 right-0 z-50 bg-transparent p-2 flex justify-between"
@@ -27,7 +33,8 @@ function Header() {
         className='w-1/4 flex justify-end'
       >
         <div
-          className='absolute animate-spin animate-spin-slow'
+          className={`absolute animate-spin animate-spin-slow z-50`}
+          onClick={scrollToCNTSection}
         >
           <ReactCurvedText
             width={100}
@@ -44,7 +51,7 @@ function Header() {
           />
         </div>
         <div
-          className='absolute animate-spin animate-spin-slow'
+          className={`absolute animate-spin animate-spin-slow`}
         >
           <ReactCurvedText
             width={100}
