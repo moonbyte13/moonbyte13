@@ -5,7 +5,7 @@ import './style.css'
 
 function Hero() {
   return (
-    <section className="hero h-[100vh] flex-col justify-center">
+    <section className="hero h-[100vh] flex-col justify-center mb-24">
       <div
         className='translate-y-[25vh]'
       >
@@ -29,12 +29,12 @@ function Hero() {
             />
           </div>
         <div
-          className='container flex justify-center animate-bounce'
+          className='flex justify-center animate-bounce'
         >
           <Scroll />
         </div>
         <div
-          className='container flex justify-center animate-bounce'
+          className='flex justify-center animate-bounce'
         >
           <DD 
             className='w-[3vw]'

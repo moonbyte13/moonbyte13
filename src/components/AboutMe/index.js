@@ -8,11 +8,18 @@ function AboutMe() {
   });
   return (
     <div className="flex flex-col z-0">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">About Me</h2>
-      <div id='profilePic' className='w-60 self-center lg:self-start origin-center'>
-        <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
+      <div
+        className='grid grid-cols-2 mb-10'
+      >
+        <div id='profilePic' className='w-fit justify-self-end'>
+          <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
+        </div>
+        <div className='col-start-2 p-2'>
+          <p className="text-[3vw] text-[#a4d4b4]">About Me</p>
+          <p className='text-[4vw] text-[#d6c17a]'>Welcome, I'm Michael</p>
+          <p className="text-[1vw] text-[#a4d4b4]">{aboutMe.txt}</p>
+        </div>
       </div>
-      <p className="p-10">{aboutMe.txt}</p>
     </div>
   );
 }
