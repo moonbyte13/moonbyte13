@@ -15,9 +15,9 @@ function Portfolio() {
       <main className="main my-20">
         <Hero />
         <AboutMe />
+        <Resume />
         <Projects />
         <ContactMe />
-        <Resume />
       </main>
       <Footer />
     </div>

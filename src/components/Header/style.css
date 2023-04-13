@@ -1,70 +1,111 @@
-text{
+#logo text{
   user-select: none;
   font-family:'Roboto Mono';
   font-size:14px;
 }
 
-rect.backdrop{
-  stroke:none;
-  fill:rgba(0,0,0,0);
+#logo tspan {
+  font-family:'Nunito', monospace;
+  font-size: 14px;
 }
 
-.broken{
+#logo .star {
+  fill:var(--color-y);
+}
+
+text .tspan-0 {
+  fill:var(--color-p);
+}
+
+text .tspan-1 {
+  fill:var(--color-g);
+}
+
+#logo rect.backdrop{
+  stroke:none;
+  fill:#00000000;
+}
+
+#logo .broken{
   stroke-dasharray:8;
 }
 
-.filled{
+#logo .filled{
   fill:black;
 }
 
-.bg_filled{
+#logo .bg_filled{
   fill:rgba(255, 255, 255, 0);
 }
 
-.nofill{
+#logo .nofill{
   fill:rgba(255, 255, 255, 0);
 }
 
-.end_marked_arrow{
+#logo .end_marked_arrow{
   marker-end:url(#arrow);
 }
 
-.start_marked_arrow{
+#logo .start_marked_arrow{
   marker-start:url(#arrow);
 }
 
-.end_marked_diamond{
+#logo .end_marked_diamond{
   marker-end:url(#diamond);
 }
 
-.start_marked_diamond{
+#logo .start_marked_diamond{
   marker-start:url(#diamond);
 }
 
-.end_marked_circle{
+#logo .end_marked_circle{
   marker-end:url(#circle);
 }
 
-.start_marked_circle{
+#logo .start_marked_circle{
   marker-start:url(#circle);
 }
 
-.end_marked_open_circle{
+#logo .end_marked_open_circle{
   marker-end:url(#open_circle);
 }
 
-.start_marked_open_circle{
+#logo .start_marked_open_circle{
   marker-start:url(#open_circle);
 }
 
-.end_marked_big_open_circle{
+#logo .end_marked_big_open_circle{
   marker-end:url(#big_open_circle);
 }
 
-.start_marked_big_open_circle{
+#logo .start_marked_big_open_circle{
   marker-start:url(#big_open_circle);
 }
 
-header svg {
+#logo {
   width: 25%;
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+#svgCont:hover .animate-spin-slow {
+  animation: spin-reverse 5s linear infinite;
+  animation-fill-mode: both;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  100% {
+    transform: rotate(-360deg);
+  }
 }

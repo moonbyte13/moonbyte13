@@ -12,7 +12,7 @@ function AboutMe() {
       <div
         className='grid grid-cols-12'
       >
-        <div id='profilePic' className='w-fit justify-self-end col-start-2 col-span-3 animate-[swing_1s_ease-in-out_infinite_alternate]'>
+        <div id='profilePic' className='justify-self-end col-start-2 col-span-3 animate-[swing_1s_ease-in-out_infinite_alternate]'>
           <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
         </div>
         <div className='col-start-6 col-span-6 p-2'>

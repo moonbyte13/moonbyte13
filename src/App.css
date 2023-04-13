@@ -1,3 +1,13 @@
 * {
   font-family: 'Nunito', 'Roboto Mono', monospace;
 }
+
+:root {
+  --color-p: #b39ddb;
+  --color-g: #89c4a7;
+  --color-y: #d6c17a;
+}
+
+li {
+  list-style-type: none;
+}
