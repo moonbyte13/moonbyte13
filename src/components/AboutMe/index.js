@@ -16,8 +16,8 @@ function AboutMe() {
           <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
         </div>
         <div className='col-start-6 col-span-6 p-2'>
-          <p className="text-[3vw] text-[#a4d4b4]">About Me</p>
-          <p className='text-[4vw] text-[#d6c17a]'>Welcome, I'm Michael</p>
+          <p className="text-[2vw] text-[#b39ddb] font-semibold">About Me</p>
+          <p className='text-[4vw] text-[#d6c17a] font-medium'>Welcome, I'm Michael!</p>
           <p className="text-[1vw] text-[#a4d4b4]">{aboutMe.txt}</p>
         </div>
       </div>
