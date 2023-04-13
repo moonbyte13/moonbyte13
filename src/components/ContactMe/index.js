@@ -5,9 +5,6 @@ import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/solid';
 
 function ContactForm () {
 
-  // const successIcon = <CheckCircleIcon className="h-8 w-8 text-green-500" />;
-  // const errorIcon = <XCircleIcon className="h-8 w-8 text-red-500" />;
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -124,7 +121,7 @@ function ContactForm () {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center z-0">
+    <div id='contactMeSection' className="flex flex-col justify-center items-center z-0">
       <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">
         Contact Me
       </h2>
