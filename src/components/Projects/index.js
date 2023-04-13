@@ -72,16 +72,21 @@ function Projects () {
 
   return (
     <div 
-      className={``}
+      className={`grid grid-cols-12 grid-rows-12 justify-items-center`}
     >
-      <h2 
-        className={`text-3xl md:text-4xl lg:text-5xl lg:text-start`}
+      <p 
+        className={`text-[2vw] text-[#b39ddb] font-semibold col-start-6`}
       >
         Projects
-      </h2>
+      </p>
+      <p
+        className={`text-[3vw] text-[#a4d4b4] row-start-2 col-span-11`}
+      >
+        Curious What i've been working on?
+      </p>
 
       <div 
-        className={`grid grid-cols-1 justify-items-center p-2 lg:grid-cols-2 gap-4 md:p-4`}
+        className={`row-start-3 row-span-10 col-span-12 grid grid-cols-1 justify-items-center p-2 lg:grid-cols-2 gap-4 md:p-4`}
       >
         {projects.map((project) => (
           <div 
@@ -155,10 +160,10 @@ function Projects () {
                     target='_blank' 
                     rel='noopener noreferrer'>
 
-                    <h3 
+                    <p 
                       className={`text-2xl md:text-3xl lg:text-4xl`}>
                         {project.name}
-                      </h3>
+                      </p>
                   </a>
                 </div>
                 <p className={`pt-1 w-full text-center lg:text-start`}
