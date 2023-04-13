@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css'
 
 function AboutMe() {
   const [aboutMe] = useState({
@@ -7,14 +8,14 @@ function AboutMe() {
     imgUrl: 'https://i.imgur.com/G3ppIiG.png'
   });
   return (
-    <div className="flex flex-col z-0">
+    <div className="flex flex-col z-0 mb-24">
       <div
-        className='grid grid-cols-2 mb-10'
+        className='grid grid-cols-12'
       >
-        <div id='profilePic' className='w-fit justify-self-end'>
+        <div id='profilePic' className='w-fit justify-self-end col-start-2 col-span-3 animate-[swing_1s_ease-in-out_infinite_alternate]'>
           <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
         </div>
-        <div className='col-start-2 p-2'>
+        <div className='col-start-6 col-span-6 p-2'>
           <p className="text-[3vw] text-[#a4d4b4]">About Me</p>
           <p className='text-[4vw] text-[#d6c17a]'>Welcome, I'm Michael</p>
           <p className="text-[1vw] text-[#a4d4b4]">{aboutMe.txt}</p>
