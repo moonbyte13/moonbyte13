@@ -121,7 +121,7 @@ function ContactForm () {
   ];
 
   return (
-    <div id='contactMeSection' className="flex flex-col justify-center items-center z-0">
+    <div id='contactMeSection' className="row-start-11 flex flex-col justify-center items-center z-0">
       <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">
         Contact Me
       </h2>

@@ -40,7 +40,7 @@ function Resume() {
   }
 
   return (
-    <div className="grid grid-cols-12 grid-rows-12 justify-items-center">
+    <div className="row-start-4 row-span-2 grid grid-cols-12 grid-rows-12 justify-items-center">
       <h2 className="text-[2vw] text-[#b39ddb] font-semibold col-span-12">Resume</h2>
       <div id='resumeIcon' className='row-start-2 row-span-2 col-span-12'>
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="192" height="192" viewBox="0,0,256,256" onClick={downloadResume} className='hover: cursor-pointer h-fit hover:animate-ping'>

@@ -12,7 +12,7 @@ function Portfolio() {
   return (
     <div>
       <Header/>
-      <main className="main">
+      <main className="main grid grid-rows-12">
         <Hero />
         <AboutMe />
         <Resume />

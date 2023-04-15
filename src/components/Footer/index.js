@@ -15,7 +15,7 @@ function Footer() {
   });
 
   return (
-    <footer className="footer">
+    <footer className="row-start-12 footer">
       <ul className="flex flex-row justify-center m-5">
         <li className="footerLiItm hover:opacity-25 transition-opacity duration-500 ease-in-out">
           <a href={footer.link1} target="_blank" rel="noopener noreferrer">

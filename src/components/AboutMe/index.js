@@ -8,7 +8,7 @@ function AboutMe() {
     imgUrl: 'https://i.imgur.com/G3ppIiG.png'
   });
   return (
-    <div id='abtMeSect' className="flex flex-col z-0 mb-24">
+    <div id='abtMeSect' className="row-start-3 flex flex-col z-0 mb-24">
       <div
         className='grid grid-cols-12 z-2'
       >
