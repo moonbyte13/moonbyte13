@@ -23,14 +23,36 @@ function Header() {
     element.scrollIntoView({ behavior: 'smooth' });
   };
 
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+  
+    const scrollPercentage = ((scrollHeight - scrollTop - clientHeight) / (scrollHeight - clientHeight)) * 100;
+    const fadeElement = document.querySelector('.fade');
+  
+    const minOpacity = 0.25;
+    const opacity = scrollPercentage / 100;
+  
+    if (opacity < minOpacity) {
+      fadeElement.style.opacity = minOpacity;
+    } else {
+      fadeElement.style.opacity = opacity;
+    }
+  }
+  
+
+  window.addEventListener('scroll', handleScroll);
+
+
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent p-2 flex justify-between"
+      className="fixed top-0 left-0 right-0 z-10 bg-transparent p-2 flex justify-between"
     >
-      <Logo/>
+      <Logo />
       <div
         id='svgCont'
-        className='w-1/4 flex justify-end'
+        className='w-[1px] flex justify-end'
       >
         <div
           className={`absolute animate-spin animate-spin-slow z-50`}
