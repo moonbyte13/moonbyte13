@@ -72,7 +72,7 @@ function Projects () {
 
   return (
     <div 
-      className={`row-start-8 row-span-3 grid grid-cols-12 grid-rows-12 justify-items-center`}
+      className={`row-start-7 row-span-2 grid grid-cols-12 grid-rows-12 justify-items-center`}
     >
       <p 
         className={`text-[2vw] text-[#b39ddb] font-semibold col-start-6`}
