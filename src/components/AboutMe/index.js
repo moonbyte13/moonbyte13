@@ -10,7 +10,7 @@ function AboutMe() {
   return (
     <div id='abtMeSect' className="flex flex-col z-0 mb-24">
       <div
-        className='grid grid-cols-12'
+        className='grid grid-cols-12 z-2'
       >
         <div id='profilePic' className='justify-self-end col-start-2 col-span-3 animate-[swing_1s_ease-in-out_infinite_alternate]'>
           <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>

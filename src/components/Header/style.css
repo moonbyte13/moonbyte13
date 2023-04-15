@@ -21,10 +21,6 @@ text .tspan-1 {
   fill:var(--color-g);
 }
 
-#logo rect.backdrop{
-  stroke:none;
-  fill:#00000000;
-}
 
 #logo .broken{
   stroke-dasharray:8;
@@ -34,13 +30,6 @@ text .tspan-1 {
   fill:black;
 }
 
-#logo .bg_filled{
-  fill:rgba(255, 255, 255, 0);
-}
-
-#logo .nofill{
-  fill:rgba(255, 255, 255, 0);
-}
 
 #logo .end_marked_arrow{
   marker-end:url(#arrow);
@@ -82,13 +71,20 @@ text .tspan-1 {
   marker-start:url(#big_open_circle);
 }
 
-#logo {
-  width: 25%;
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
+
 
 .animate-spin-slow {
   animation: spin 10s linear infinite;
   transition: transform 0.3s ease-in-out;
+}
+
+#svgCont {
+  height: 100%;
+  width: 100%;
 }
 
 #svgCont:hover .animate-spin-slow {
