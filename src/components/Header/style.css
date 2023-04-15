@@ -82,6 +82,11 @@ text .tspan-1 {
   transition: transform 0.3s ease-in-out;
 }
 
+#svgCont {
+  height: 100%;
+  width: 100%;
+}
+
 #svgCont:hover .animate-spin-slow {
   animation: spin-reverse 5s linear infinite;
   animation-fill-mode: both;
