@@ -54,9 +54,9 @@ function Resume() {
       <label 
         className='row-start-3 col-span-12 text-[1vw] text-[#b39ddb] animate-bounce self-center'
       >^ Click Above to Download! ^</label>
-      <div className="row-start-4 row-end-12 col-span-12 text-center text-[1vw] text-[#a4d4b4] flex w-full">
+      <div className="row-start-4 row-span-12 col-span-12 text-center text-[1vw] text-[#a4d4b4] flex w-full">
         <br/>
-        <div className='w-full grid grid-cols-12 grid-rows-8 gap-2 p-10'>
+        <div className='w-full grid grid-cols-12 grid-rows-5 gap-2 p-10'>
           {resume.skills.map((skill, index) => {
             const rowStart = Math.floor(index / 6);
             const colStart = (index % 6) * 2 + 1 + (rowStart % 2);
