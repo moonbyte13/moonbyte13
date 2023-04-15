@@ -34,7 +34,7 @@ function Hero() {
           </div>
       </div>
       <div
-        className='flex justify-center row-start-12 pb-2 animate-[bounce_1s_infinite]'
+        className='flex justify-center row-start-12 pb-24 md:pb-2 animate-[bounce_1s_infinite]'
       >
         <DD 
           className='w-[3vw] hover:cursor-pointer'
