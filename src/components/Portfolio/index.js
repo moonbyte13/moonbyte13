@@ -12,7 +12,7 @@ function Portfolio() {
   return (
     <div>
       <Header/>
-      <main className="main my-20">
+      <main className="main">
         <Hero />
         <AboutMe />
         <Resume />
