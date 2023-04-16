@@ -128,7 +128,7 @@ function ContactForm () {
       <form
         action="?"
         method="POST"
-        className="flex flex-col self-center md:w-7/12 lg:w-1/2"
+        className="flex flex-col self-center w-5/6 md:w-2/3 lg:w-1/2"
         onSubmit={handleFormSubmit}
         data-size="invisible"
       >
