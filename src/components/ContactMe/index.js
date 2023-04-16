@@ -115,32 +115,32 @@ function ContactForm () {
   
 
   const inputFields = [
-    { name: "name", type: "text", label: "Name" },
-    { name: "email", type: "email", label: "Email" },
-    { name: "message", type: "textarea", label: "Message" },
+    { name: "name", type: "text", label: "Name..." },
+    { name: "email", type: "email", label: "Email..." },
+    { name: "message", type: "textarea", label: "Message..." },
   ];
 
   return (
-    <div id='contactMeSection' className="row-start-11 flex flex-col justify-center items-center z-0">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center lg:self-start lg:ml-10">
+    <div id='contactMeSection' className="row-start-11 flex flex-col justify-center items-center">
+      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center text-[#b39ddb]">
         Contact Me
       </h2>
       <form
         action="?"
         method="POST"
-        className="flex flex-col self-center lg:self-start lg:ml-10 lg:w-1/2 md:w-7/12"
+        className="flex flex-col self-center w-5/6 md:w-2/3 lg:w-1/2"
         onSubmit={handleFormSubmit}
         data-size="invisible"
       >
         {inputFields.map(({ name, type, label }) => (
           <React.Fragment key={name}>
-            <label htmlFor={name}>{label}</label>
             <input
+              placeholder={label}
               type={type}
               name={name}
               value={formData[name]}
               onChange={handleInputChange}
-              className={`border-bk border-2 rounded-md p-2 mb-5 mt-2 bg-transparent ${
+              className={`caret-[#b39ddb] text-[#b39ddb] border-[#89c4a7] focus:outline-none focus:ring focus:ring-[#b39ddb] border-2 rounded-md p-2 mb-5 mt-2 bg-transparent placeholder:text-[#d6c07aaf] ${
                 formErrors[name] && "border-red-500"
               }`}
               autoComplete="off"
@@ -156,7 +156,7 @@ function ContactForm () {
         <button
           id="submit"
           type="submit"
-          className="border-bk border-2 rounded-md p-2 w-fit self-center lg:self-start"
+          className="border-[#d6c17a] border-2 rounded-md p-2 w-fit self-center bg-transparent text-[#d6c17a] hover:bg-[#d6c17a] hover:text-[#0F0F0F] font-['Nunito'] font-normal hover:font-extrabold"
           disabled={!formIsValid}
         >
           Submit
@@ -169,23 +169,23 @@ function ContactForm () {
             className="fixed z-10 inset-0 overflow-y-auto"
           >
             <div className="flex items-center justify-center min-h-screen">
-              <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
+              <Dialog.Overlay className="fixed inset-0 bg-[#1a202c] opacity-30" />
   
-              <div className="modal-box bg-white rounded-md shadow-xl p-8 w-11/12 lg:w-1/2">
+              <div className="modal-box border-[#d6c17a] border-2 rounded-md bg-[#414141] shadow-xl p-8 w-11/12 lg:w-1/2">
                 <div className="flex justify-end">
-                  <button onClick={closeModal}>
-                    <XCircleIcon className="h-6 w-6 text-gray-600 hover:text-gray-800" />
+                  <button onClick={closeModal} className='bg-transparent border-none'>
+                    <XCircleIcon className="h-6 w-6 text-gray-100 hover:text-gray-800 border-full" />
                   </button>
                 </div>
                 <div className="text-center">
-                  <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                    <CheckCircleIcon className="h-6 w-6 text-green-600" />
+                  <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-900">
+                    <CheckCircleIcon className="h-6 w-6 text-green-100" />
                   </div>
-                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 mt-4">
+                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 mt-4 text-gray-100">
                     {modalTitle}
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">{modalMessage}</p>
+                    <p className="text-sm text-gray-100">{modalMessage}</p>
                   </div>
                 </div>
               </div>
