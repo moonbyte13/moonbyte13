@@ -37,7 +37,7 @@ function Hero() {
         className='flex justify-center row-start-12 pb-12 md:pb-2 animate-[bounce_1s_infinite]'
       >
         <DD 
-          className='w-[3vw] hover:cursor-pointer'
+          className='w-[1em] sm:w-[2em] lg:w-[3em] hover:cursor-pointer'
           onClick={scrollToABTSection}
         />
       </div>
