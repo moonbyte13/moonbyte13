@@ -8,17 +8,17 @@ function AboutMe() {
     imgUrl: 'https://i.imgur.com/G3ppIiG.png'
   });
   return (
-    <div id='abtMeSect' className="row-start-3 flex flex-col z-0 mb-24">
+    <div id='abtMeSect' className="row-start-2 lg:row-start-3 flex flex-col z-0">
       <div
-        className='grid grid-cols-12 z-2'
+        className='grid grid-rows-2 grid-cols-12'
       >
-        <div id='profilePic' className='justify-self-end col-start-2 col-span-3 animate-[swing_1s_ease-in-out_infinite_alternate]'>
-          <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full lg:mx-10 my-10'/>
+        <div id='profilePic' className='justify-self-center col-start-4 col-span-6 lg:justify-self-end lg:col-start-2 lg:col-span-3'>
+          <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full m-10 w-[10em] sm:w-[13em] md:w-[15em] lg:w-[50em]'/>
         </div>
-        <div className='col-start-6 col-span-6 p-2'>
-          <p className="text-[2vw] text-[#b39ddb] font-semibold">About Me</p>
-          <p className='text-[4vw] text-[#d6c17a] font-medium'>Welcome, I'm Michael!</p>
-          <p className="text-[1vw] text-[#a4d4b4]">{aboutMe.txt}</p>
+        <div className='text-center lg:text-start row-start-2 col-start-3 col-span-8 lg:row-start-1 lg:col-start-6 lg:col-span-6 p-2'>
+          <p className="text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold">About Me</p>
+          <p className='text-[2rem] md:text-[3rem] lg:text-[3rem] text-[#d6c17a] font-medium'>Welcome, I'm Michael!</p>
+          <p className="text-[0.7rem] md:text-[0.9rem] lg:text-[1rem] text-[#a4d4b4]">{aboutMe.txt}</p>
         </div>
       </div>
     </div>
