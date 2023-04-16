@@ -1,18 +1,18 @@
 import React from 'react';
-import Header from '../Header/';
-import Hero from '../Hero/';
-import Footer from '../Footer/';
-import AboutMe from '../AboutMe/';
-import Projects from '../Projects/';
-import ContactMe from '../ContactMe/';
-import Resume from '../Resume/';
+import Header from '../Header';
+import Hero from '../Hero';
+import Footer from '../Footer';
+import AboutMe from '../AboutMe';
+import Projects from '../Projects';
+import ContactMe from '../ContactMe';
+import Resume from '../Resume';
 
 function Portfolio() {
 
   return (
     <div>
       <Header/>
-      <main className="main grid grid-rows-12 gap-y-48">
+      <main className="bg-[#0f0f0f] grid grid-rows-12 gap-y-48">
         <Hero />
         <AboutMe />
         <Resume />

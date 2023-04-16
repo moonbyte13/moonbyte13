@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'daisyui/dist/full.css';
 import './style.css';
 
 function Resume() {

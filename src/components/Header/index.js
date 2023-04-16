@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactCurvedText from "react-curved-text";
 import './style.css'
-import { ReactComponent as Logo } from './logo.svg';
+import Logo from './logo.svg';
 
 function Header() {
 

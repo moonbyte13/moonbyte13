@@ -1,11 +1,9 @@
-* {
-  font-family: 'Nunito', 'Roboto Mono', monospace;
-}
-
+// Define the variables
+// Define the styles using the global variables
 :root {
-  --color-p: #b39ddb;
-  --color-g: #89c4a7;
-  --color-y: #d6c17a;
+  --color-p: $color-p;
+  --color-g: $color-g;
+  --color-y: $color-y;
 }
 
 li {

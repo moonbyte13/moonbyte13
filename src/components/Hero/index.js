@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as DD } from './dd.svg';
+import DD from './dd.svg';
 import './style.css'
 
 function Hero() {
