@@ -1,4 +1,4 @@
-<svg id='logo' xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 536 368' class='fade w-[10rem] md:w-[15rem] lg:w-[20rem]'>
+<svg id='logo' xmlns='http://www.w3.org/2000/svg'  viewBox='0 0 536 368'>
   <defs>
     <marker 
       id='arrow' 

@@ -85,7 +85,7 @@ function Header() {
     <header 
       className="fixed top-0 left-0 w-[100%] z-10 bg-transparent p-2 flex justify-between"
     >
-      <Logo />
+      <Logo className='fade w-5 md:w-[15rem] lg:w-[20rem]' />
       <div
         id='svgCont'
         className='flex justify-end'

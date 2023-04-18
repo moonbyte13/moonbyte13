@@ -1,18 +1,26 @@
-const daisyui = require('daisyui')
-
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  mode: 'jit',
+  purge: ['./public/**/*.html', './src/**/*.{js,jsx,svg}'],
+  darkMode: false,
   theme: {
     extend: {},
   },
   variants: {
     extend: {},
   },
+  corePlugins: {
+    preflight: true,
+  },
   plugins: [
     require('tailwindcss'),
     require('autoprefixer'),
-    // Add DaisyUI plugin
-    ...daisyui.postcssPlugins,
+    require('daisyui'),
   ],
-}
+  presets: [
+    {
+      layer: 'base',
+      theme: {},
+      variants: {},
+    },
+  ],
+};

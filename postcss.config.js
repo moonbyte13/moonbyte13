@@ -1,11 +1,9 @@
-const daisyui = require('daisyui')
-
 module.exports = {
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    ...daisyui.postcssPlugins({
-      // Add options here
-    }),
-  ],
-}
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    'postcss-modules': {
+      generateScopedName: '[local] [hash:base64:5]',
+    },
+  },
+};
