@@ -1,0 +1,108 @@
+.device-mockup {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: 0;
+  padding-bottom: 45%;
+  border: 1rem solid #33300000;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.device-mockup:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 1.5rem 1.5rem 0 0;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.device-mockup:hover:before,
+.device-mockup:hover .toolbar-button {
+  opacity: 1;
+}
+
+.device-mockup:hover iframe {
+  opacity: 1;
+}
+
+.device-mockup iframe {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 24px);
+  border: none;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Toolbar buttons */
+.device-mockup .toolbar-button {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: 6px;
+  opacity: 0.25;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.device-mockup .toolbar-button.red {
+  background-color: #ff5f56;
+  left: 8px;
+}
+
+.device-mockup .toolbar-button.yellow {
+  background-color: #ffbd2e;
+  left: 28px;
+}
+
+.device-mockup .toolbar-button.green {
+  background-color: #27c93f;
+  left: 48px;
+}
+
+.project-name {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+  border-radius: 0.6rem;
+}
+
+.project-description {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+  border-radius: 0.6rem;
+}
+
+.github-link {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
