@@ -2,6 +2,7 @@ import React from 'react';
 import './DeviceMockup.css';
 
 const DeviceMockup = ({ name, deployedLink, description, githubLink }) => {
+  
   return (
     <div className="device-mockup">
       <div className="toolbar-button red"></div>
