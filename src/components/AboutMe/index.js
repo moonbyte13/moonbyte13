@@ -8,9 +8,9 @@ function AboutMe() {
     imgUrl: 'https://i.imgur.com/G3ppIiG.png'
   });
   return (
-    <div id='abtMeSect' className="row-start-2 lg:row-start-3 flex flex-col z-0">
+    <div id='abtMeSect' className="flex flex-col z-0 mb-[10rem]">
       <div
-        className='grid grid-rows-2 grid-cols-12'
+        className='grid grid-rows-1 grid-cols-12'
       >
         <div id='profilePic' className='justify-self-center col-start-4 col-span-6 lg:justify-self-end lg:col-start-2 lg:col-span-3'>
           <img src={aboutMe.imgUrl} alt="about me img" className='border-bk rounded-full m-10 w-[10em] sm:w-[13em] md:w-[15em] lg:w-[50em]'/>

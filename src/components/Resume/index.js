@@ -49,7 +49,7 @@ function Resume() {
   }
 
   return (
-    <div id='resumeSect' className="row-start-3 lg:row-start-4 row-span-2 flex flex-col items-center">
+    <div id='resumeSect' className="flex flex-col items-center">
       <h2 className="text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold w-fit">Resume</h2>
       <div id='resumeIcon' className='w-[5rem] sm:w-[7rem] md:w-[10rem] lg:w-[15rem] flex justify-center'>
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="192" height="192" viewBox="0,0,256,256" onClick={downloadResume} className='hover: cursor-pointer h-fit w-fit hover:animate-ping'>
