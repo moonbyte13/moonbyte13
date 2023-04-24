@@ -9,7 +9,7 @@ function Hero() {
   };
 
   return (
-    <section className="lg:row-span-2 hero h-[100vh] grid grid-rows-12">
+    <section className="hero h-[100vh] grid grid-rows-12 mb-[10rem]">
       <div
         className='translate-y-[20vh] flex flex-col justify-center row-span-7'
       >
