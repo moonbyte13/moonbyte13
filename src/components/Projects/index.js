@@ -56,7 +56,7 @@ function Projects () {
   ]);
 
   return (
-    <div className={`flex flex-col justify-center text-center`}>
+    <div className={`flex flex-col justify-center text-center mb-[10rem]`}>
       <p 
         className={`text-[2vw] text-[#b39ddb] font-semibold`}
       >
