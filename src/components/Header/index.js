@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactCurvedText from "react-curved-text";
 import './style.css'
 import { ReactComponent as Logo } from './logo.svg';
 
 function Header() {
 
-  const fontSizes = [0.8, 0.9, 1];
-  const [radius, setRadius] = useState(0.5);
-  const [scale, setScale] = useState(1);
-  const [fontSize, setFontSize] = useState(1);
+  const [radius] = useState(0.5);
+  const [scale] = useState(1);
+  const [fontSize] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
 
   useEffect(() => {
@@ -55,35 +54,11 @@ function Header() {
     };
   }
   
-  useLayoutEffect(() => {
-    const debouncedHandleResize  = debounce(() => {
-      const screenWidth = window.innerWidth;
-      let newScale;
-      let fontSize;
-      let newRadius;
-      
-      if (screenWidth < 768) {
-        fontSize = fontSizes[0];
-        newScale = fontSizes[0];
-        newRadius = (0.8 * fontSizes[0]);
-      } else if (screenWidth >= 768 && screenWidth < 1024) {
-        fontSize = fontSizes[1];
-        newScale = fontSizes[1];
-        newRadius = (0.9 * fontSizes[1]);
-      } else {
-        fontSize = fontSizes[2];
-        newScale = fontSizes[2];
-        newRadius = fontSizes[2];
-      }
-      setRadius(newRadius)
-      setScale(newScale);
-      setFontSize(fontSize);
-    }, 250);
+  useEffect(() => {
+    const debouncedHandleScroll = debounce(handleScroll, 100);
+    window.addEventListener('scroll', debouncedHandleScroll);
   
-    debouncedHandleResize();
-    window.addEventListener('resize', debouncedHandleResize);
-  
-    return () => window.removeEventListener('resize', debouncedHandleResize);
+    return () => window.removeEventListener('scroll', debouncedHandleScroll);
   }, []);
   
   
