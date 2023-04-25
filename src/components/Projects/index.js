@@ -56,7 +56,7 @@ function Projects () {
   ]);
 
   return (
-    <div className={`flex flex-col justify-center text-center`}>
+    <div className={`flex flex-col justify-center text-center mb-[10rem]`}>
       <p 
         className={`text-[2vw] text-[#b39ddb] font-semibold`}
       >
@@ -68,9 +68,9 @@ function Projects () {
         Curious What i've been working on?
       </p>
 
-      <div>
+      <div className='projectContainer'>
       {projects.map((project) => (
-        <div key={project.id} className="App">
+        <div key={project.id} className="App flex odd:justify-start even:justify-end">
           <DeviceMockup
             name={project.name}
             deployedLink={project.deployedLink}
