@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import ReactCurvedText from "react-curved-text";
 import './style.css'
 import { ReactComponent as Logo } from './logo.svg';
@@ -31,22 +31,32 @@ function Header() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
-  
+
     const scrollPercentage = ((scrollHeight - scrollTop - clientHeight) / (scrollHeight - clientHeight)) * 100;
     const fadeElement = document.querySelector('.fade');
-  
-    const minOpacity = 0.25;
-    const opacity = scrollPercentage / 100;
-  
-    if (opacity < minOpacity) {
-      fadeElement.style.opacity = minOpacity;
-    } else {
-      fadeElement.style.opacity = opacity;
+
+    if (fadeElement) { // <-- add null check
+      const minOpacity = 0.25;
+      const opacity = scrollPercentage / 100;
+
+      if (opacity < minOpacity) {
+        fadeElement.style.opacity = minOpacity;
+      } else {
+        fadeElement.style.opacity = opacity;
+      }
     }
   }
 
-  useEffect(() => {
-    const handleResize = () => {
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
+  
+  useLayoutEffect(() => {
+    const debouncedHandleResize  = debounce(() => {
       const screenWidth = window.innerWidth;
       let newScale;
       let fontSize;
@@ -68,12 +78,12 @@ function Header() {
       setRadius(newRadius)
       setScale(newScale);
       setFontSize(fontSize);
-    };
+    }, 250);
   
-    handleResize();
-    window.addEventListener('resize', handleResize);
+    debouncedHandleResize();
+    window.addEventListener('resize', debouncedHandleResize);
   
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', debouncedHandleResize);
   }, []);
   
   
