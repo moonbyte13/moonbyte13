@@ -16,7 +16,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <ul className="flex flex-row justify-center m-5">
+      <ul className="flex flex-row justify-center p-[10rem]">
         <li className="footerLiItm hover:opacity-25 transition-opacity duration-500 ease-in-out">
           <a href={footer.link1} target="_blank" rel="noopener noreferrer">
             <svg
