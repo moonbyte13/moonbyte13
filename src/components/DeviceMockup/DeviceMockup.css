@@ -1,7 +1,7 @@
 .scrollable-iframe {
   overflow-y: scroll; /* Add vertical scrollbar */
   scrollbar-width: thin; /* Width of custom scrollbar */
-  scrollbar-color: #888 #f1f1f1; /* Color of custom scrollbar */
+  scrollbar-color: #888 /* Color of custom scrollbar */
 }
 
 .scrollable-iframe::-webkit-scrollbar {
@@ -22,11 +22,10 @@
   background-color: #555;
 }
 
-
 .device-mockup {
   position: relative;
   display: inline-block;
-  width: 80%;
+  width: 69%;
   height: 0;
   padding-bottom: 45%;
   border: 1rem solid #33300000;
@@ -117,13 +116,13 @@
 
 .github-link {
   position: absolute;
-  bottom: 1rem;
+  top: 0.03rem;
   right: 2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.3rem;
-  border-radius: 0.6rem;
+  padding: 0.1rem;
+  border-radius: 0.2rem;
   text-decoration: none;
 }
 

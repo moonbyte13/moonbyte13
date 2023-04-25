@@ -68,9 +68,9 @@ function Projects () {
         Curious What i've been working on?
       </p>
 
-      <div>
+      <div className='projectContainer'>
       {projects.map((project) => (
-        <div key={project.id} className="App">
+        <div key={project.id} className="App flex odd:justify-start even:justify-end">
           <DeviceMockup
             name={project.name}
             deployedLink={project.deployedLink}
