@@ -31,6 +31,35 @@
   border: 1rem solid #33300000;
   border-radius: 1.5rem;
   overflow: hidden;
+
+  opacity: 0.5; /* Set default opacity value */
+  transition: opacity 0.5s ease; /* Add a transition effect */
+
+  /* Define opacity values based on visibility */
+  &.visible {
+    opacity: 1;
+  }
+
+  &.visible + .device-mockup {
+    opacity: 0.75;
+  }
+
+  &.visible + .device-mockup + .device-mockup {
+    opacity: 0.5;
+  }
+}
+
+.device-mockup.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Add a transition effect */
+}
+
+.device-mockup.visible + .device-mockup {
+  opacity: 0.75;
+}
+
+.device-mockup.visible + .device-mockup + .device-mockup {
+  opacity: 0.5;
 }
 
 .device-mockup:before {
