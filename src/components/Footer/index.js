@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function Footer() {
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 500);
-  }, []);
   
-
   const [footer] = useState({
     link1: 'https://github.com/moonphase13',
     link2: 'https://www.linkedin.com/in/michael-frayne-00b491247/',
