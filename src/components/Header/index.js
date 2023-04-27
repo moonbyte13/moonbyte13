@@ -47,6 +47,19 @@ function Header() {
     }
   }
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setColorIndex((colorIndex) => (colorIndex + 1) % 3);
+    }, 2000);
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearInterval(intervalId);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   function debounce(func, wait) {
     let timeout;
     return function (...args) {
@@ -92,10 +105,10 @@ function Header() {
     <header 
       className="fixed top-0 left-0 w-[100%] z-10 bg-transparent p-2 flex justify-between"
     >
-      <Logo />
+      <Logo className="fade w-[15rem]"/>
       <div
         id='svgCont'
-        className='flex justify-end'
+        className='flex justify-end' 
         style={{ 
           transform: `scale(${scale})`, 
           height: `${100 * scale}px`, 
