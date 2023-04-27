@@ -57,15 +57,15 @@ function Projects () {
 
   return (
     <div className={`flex flex-col justify-center text-center mb-[10rem]`}>
-      <p 
-        className={`text-[2vw] text-[#b39ddb] font-semibold`}
-      >
-        Projects
-      </p>
-      <p
-        className={`text-[3vw] text-[#a4d4b4]`}
+{/*       <p 
+        className={`text-[0.6rem] md:text-[1.5rem] lg:text-[1.5rem] text-[#a4d4b4]`}
       >
         Curious What i've been working on?
+      </p> */}
+      <p
+        className={`text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold`}
+      >
+        Projects
       </p>
 
       <div className='projectContainer'>
