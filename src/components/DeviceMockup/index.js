@@ -62,6 +62,9 @@ const DeviceMockup = ({ name, deployedLink, description, githubLink }) => {
       <a className="github-link" href={githubLink} target="_blank" rel="noopener noreferrer">
         View on GitHub
       </a>
+      <a className="deployed-link" href={deployedLink} target="_blank" rel="noopener noreferrer">
+        View Live
+      </a>
     </div>
   );
 };
