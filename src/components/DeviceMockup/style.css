@@ -172,3 +172,11 @@
 .deployed-link:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 1024px) {
+  .device-mockup {
+    width: 100%;
+    height: 69vw
+  }
+}
+
