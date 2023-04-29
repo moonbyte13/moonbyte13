@@ -5,11 +5,19 @@ import { ReactComponent as Logo } from './logo.svg';
 
 function Header() {
 
-  const fontSizes = [0.8, 0.9, 1];
+  const fontSizes = [0.85, 0.9, 1];
   const [radius, setRadius] = useState(0.5);
   const [scale, setScale] = useState(1);
   const [fontSize, setFontSize] = useState(1);
   const [colorIndex, setColorIndex] = useState(0);
+  const [animationStarted, setAnimationStarted] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimationStarted(true);
+    }, 100); // You can adjust the delay value as needed
+  }, []);
+  
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -105,7 +113,7 @@ function Header() {
     <header 
       className="fixed top-0 left-0 w-[100%] z-10 bg-transparent p-2 flex justify-between"
     >
-      <Logo className="fade w-[15rem]"/>
+      <Logo className="fade w-[40%] md:w-[30%] lg:w-[15rem]"/>
       <div
         id='svgCont'
         className='flex justify-end' 
@@ -118,7 +126,7 @@ function Header() {
       >
         <div
           key={fontSize}
-          className={`absolute animate-spin animate-spin-slow z-50`}
+          className={`absolute z-50 ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
           onClick={scrollToCNTSection}
         >
           <ReactCurvedText
@@ -136,7 +144,7 @@ function Header() {
           />
         </div>
         <div
-          className={`absolute animate-spin animate-spin-slow`}
+          className={`absolute ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
         >
           <ReactCurvedText
             width={100 * scale}

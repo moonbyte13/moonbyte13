@@ -121,78 +121,80 @@ function ContactForm () {
   ];
 
   return (
-    <div id='contactMeSection' className="flex flex-col justify-center items-center mb-[10rem]">
-      <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center text-[#b39ddb]">
-        Contact Me
-      </h2>
-      <form
-        action="?"
-        method="POST"
-        className="flex flex-col self-center w-5/6 md:w-2/3 lg:w-1/2"
-        onSubmit={handleFormSubmit}
-        data-size="invisible"
-      >
-        {inputFields.map(({ name, type, label }) => (
-          <React.Fragment key={name}>
-            <input
-              placeholder={label}
-              type={type}
-              name={name}
-              value={formData[name]}
-              onChange={handleInputChange}
-              className={`caret-[#b39ddb] text-[#b39ddb] border-[#89c4a7] focus:outline-none focus:ring focus:ring-[#b39ddb] border-2 rounded-md p-2 mb-5 mt-2 bg-transparent placeholder:text-[#d6c07aaf] ${
-                formErrors[name] && "border-red-500"
-              }`}
-              autoComplete="off"
-              required={name === "name" || name === "email" || name === "message"}
-            />
-            {formErrors[name] && (
-              <span className="text-red-500 text-sm mb-5 ml-2">
-                {formErrors[name]}
-              </span>
-            )}
-          </React.Fragment>
-        ))}
-        <button
-          id="submit"
-          type="submit"
-          className="border-[#d6c17a] border-2 rounded-md p-2 w-fit self-center bg-transparent text-[#d6c17a] hover:bg-[#d6c17a] hover:text-[#0F0F0F] font-['Nunito'] font-normal hover:font-extrabold"
-          disabled={!formIsValid}
+    <div id='contactMeSection' className='pt-[15rem]'>
+      <div className="flex flex-col justify-center items-center mb-[10rem]">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center text-[#b39ddb]">
+          Contact Me
+        </h2>
+        <form
+          action="?"
+          method="POST"
+          className="flex flex-col self-center w-5/6 md:w-2/3 lg:w-1/2"
+          onSubmit={handleFormSubmit}
+          data-size="invisible"
         >
-          Submit
-        </button>
-      </form>
-      {isModalOpen && (
-        <Transition.Root show={isModalOpen} as={React.Fragment}>
-          <Dialog
-            onClose={closeModal}
-            className="fixed z-10 inset-0 overflow-y-auto"
+          {inputFields.map(({ name, type, label }) => (
+            <React.Fragment key={name}>
+              <input
+                placeholder={label}
+                type={type}
+                name={name}
+                value={formData[name]}
+                onChange={handleInputChange}
+                className={`caret-[#b39ddb] text-[#b39ddb] border-[#89c4a7] focus:outline-none focus:ring focus:ring-[#b39ddb] border-2 rounded-md p-2 mb-5 mt-2 bg-transparent placeholder:text-[#d6c07aaf] ${
+                  formErrors[name] && "border-red-500"
+                }`}
+                autoComplete="off"
+                required={name === "name" || name === "email" || name === "message"}
+              />
+              {formErrors[name] && (
+                <span className="text-red-500 text-sm mb-5 ml-2">
+                  {formErrors[name]}
+                </span>
+              )}
+            </React.Fragment>
+          ))}
+          <button
+            id="submit"
+            type="submit"
+            className="border-[#d6c17a] border-2 rounded-md p-2 w-fit self-center bg-transparent text-[#d6c17a] hover:bg-[#d6c17a] hover:text-[#0F0F0F] font-['Nunito'] font-normal hover:font-extrabold"
+            disabled={!formIsValid}
           >
-            <div className="flex items-center justify-center min-h-screen">
-              <Dialog.Overlay className="fixed inset-0 bg-[#1a202c] opacity-30" />
-  
-              <div className="modal-box border-[#d6c17a] border-2 rounded-md bg-[#414141] shadow-xl p-8 w-11/12 lg:w-1/2">
-                <div className="flex justify-end">
-                  <button onClick={closeModal} className='bg-transparent border-none'>
-                    <XCircleIcon className="h-6 w-6 text-gray-100 hover:text-gray-800 border-full" />
-                  </button>
-                </div>
-                <div className="text-center">
-                  <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-900">
-                    <CheckCircleIcon className="h-6 w-6 text-green-100" />
+            Submit
+          </button>
+        </form>
+        {isModalOpen && (
+          <Transition.Root show={isModalOpen} as={React.Fragment}>
+            <Dialog
+              onClose={closeModal}
+              className="fixed z-10 inset-0 overflow-y-auto"
+            >
+              <div className="flex items-center justify-center min-h-screen">
+                <Dialog.Overlay className="fixed inset-0 bg-[#1a202c] opacity-30" />
+    
+                <div className="modal-box border-[#d6c17a] border-2 rounded-md bg-[#414141] shadow-xl p-8 w-11/12 lg:w-1/2">
+                  <div className="flex justify-end">
+                    <button onClick={closeModal} className='bg-transparent border-none'>
+                      <XCircleIcon className="h-6 w-6 text-gray-100 hover:text-gray-800 border-full" />
+                    </button>
                   </div>
-                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 mt-4 text-gray-100">
-                    {modalTitle}
-                  </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-100">{modalMessage}</p>
+                  <div className="text-center">
+                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-900">
+                      <CheckCircleIcon className="h-6 w-6 text-green-100" />
+                    </div>
+                    <Dialog.Title as="h3" className="text-lg font-medium leading-6 mt-4 text-gray-100">
+                      {modalTitle}
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-100">{modalMessage}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Dialog>
-        </Transition.Root>
-      )}
+            </Dialog>
+          </Transition.Root>
+        )}
+      </div>
     </div>
   );  
 }
