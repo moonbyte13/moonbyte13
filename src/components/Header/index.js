@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import ReactCurvedText from "react-curved-text";
 import './style.css'
 import { ReactComponent as Logo } from './logo.svg';
+import scroll from 'scroll';
 
 function Header() {
 
@@ -32,8 +33,9 @@ function Header() {
 
   const scrollToCNTSection = () => {
     const element = document.getElementById('contactMeSection');
-    element.scrollIntoView({ behavior: 'smooth' });
+    scroll.top(document.documentElement, element.offsetTop, { duration: 1000 }); // Adjust duration as needed
   };
+  
 
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
