@@ -6,7 +6,7 @@ function Projects() {
     {
       id: 1,
       name: 'My Tech Blog',
-      tools: ['Node'],
+      tools: ['Bcrypt', 'Handlebars', 'MySQL2', 'Sequelize'],
       description: 'My CMS-style blog site',
       deployedLink: 'https://my-tech-blog-c14.herokuapp.com',
       githubLink: 'https://github.com/moonphase13/myTechBlog',
@@ -15,7 +15,7 @@ function Projects() {
     {
       id: 2,
       name: 'My Own Text Editor',
-      tools: ['mongo'],
+      tools: ['React', 'Webpack', 'MongoDB', 'Mongoose', 'PWA'],
       description: 'A full PWA text editor',
       deployedLink: 'https://my-own-text-editor.herokuapp.com',
       githubLink: 'https://github.com/moonphase13/myTextEditor',
@@ -24,7 +24,7 @@ function Projects() {
     {
       id: 3,
       name: 'Tune In',
-      tools: ['apis'],
+      tools: ['Server Side APIs', 'CSS', 'HTML', 'JavaScript'],
       description: 'An easy efficient radio browser',
       deployedLink: 'https://moonphase13.github.io/Project-Tune-in-Team-5/',
       githubLink: 'https://github.com/moonphase13/Project-Tune-in-Team-5',
@@ -33,7 +33,7 @@ function Projects() {
     {
       id: 4,
       name: 'CSS Snippet Cheatsheet',
-      tools: ['css', 'html'],
+      tools: ['CSS', 'HTML'],
       description: 'This is a cheatsheet for CSS snippets',
       deployedLink: 'https://moonphase13.github.io/CSS-Snippet-Cheatsheet/',
       githubLink: 'https://github.com/moonphase13/CSS-Snippet-Cheatsheet',
@@ -42,7 +42,7 @@ function Projects() {
     {
       id: 5,
       name: 'Portfolio Demo',
-      tools: ['html', 'css'],
+      tools: ['HTML', 'CSS'],
       description: 'This is the first version of my portfolio from the bootcamp',
       deployedLink: 'https://moonphase13.github.io/portfolio-demo-C2/',
       githubLink: 'https://github.com/moonphase13/portfolio-demo-C2',
@@ -51,7 +51,7 @@ function Projects() {
     {
       id: 6,
       name: 'Memes Against Humanity',
-      tools: ['react', 'apis'],
+      tools: ['React', 'MongoDB', 'Mongoose', 'Express', 'GraphQL', 'Apollo', 'JWT', 'Bcrypt'],
       description: 'A meme generator app that lets you discover and collect the latest and greatest memes from Giphy',
       deployedLink: 'https://memes-against-humanity.herokuapp.com',
       githubLink: 'https://github.com/moonphase13/memes-against-humanity',
