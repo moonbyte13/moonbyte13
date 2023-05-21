@@ -94,7 +94,7 @@ function Projects() {
             }`}
           >
             <div
-              className="bg-[#292929]/90 bg- p-4 z-5 w-[20rem]"
+              className="bg-[#292929]/90 bg- p-4 z-5 w-[20rem] rounded-lg"
               style={{
                 transform: isLGScreen ? `${index % 2 === 0 ? 'translateX(-30%)' : 'translateX(30%)'}` : 'translateY(-30%)',
                 borderTop: `2rem solid ${getColor(index)}`,
