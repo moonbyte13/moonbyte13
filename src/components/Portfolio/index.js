@@ -12,7 +12,7 @@ function Portfolio() {
   return (
     <div>
       <Header/>
-      <main className="main flex flex-col">
+      <main className="main z-10 flex flex-col">
         <Hero />
         <AboutMe />
         <Resume />

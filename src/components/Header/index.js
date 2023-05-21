@@ -112,59 +112,60 @@ function Header() {
 
 
   return (
-    <header 
-      className="fixed top-0 left-0 w-[100%] z-10 bg-transparent p-2 flex justify-between"
-    >
-      <Logo className="fade w-[40%] md:w-[30%] lg:w-[15rem]"/>
-      <div
-        id='svgCont'
-        className='flex justify-end' 
-        style={{ 
-          transform: `scale(${scale})`, 
-          height: `${100 * scale}px`, 
-          width: `${100 * scale}px`, 
-          right: 0,
-        }}
-      >
+    <div>
+      <header className="fixed top-0 left-0 z-0 w-fit">
+        <Logo className="fade w-[10rem] md:w-[15rem] lg:w-[20rem] z-0" />
+      </header>
+      <header className="fixed top-0 right-0 w-fit z-50 bg-transparent p-2">
         <div
-          key={fontSize}
-          className={`absolute z-50 ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
-          onClick={scrollToCNTSection}
+          id='svgCont'
+          style={{
+            transform: `scale(${scale})`,
+            height: `${100 * scale}px`,
+            width: `${100 * scale}px`,
+            right: 0,
+          }}
         >
-          <ReactCurvedText
-            width={100 * scale}
-            height={100 * scale}
-            cx={50 * scale}
-            cy={50 * scale}
-            rx={33 * radius}
-            ry={33 * radius}
-            startOffset={0}
-            reversed={true}
-            text="Contact Me!"
-            textProps={{ style: { fill: currentColor, position: 'absolute', transition: 'fill 2s ease-in-out' } }}
-            tspanProps={{ style:{ fontSize: `${scale * fontSize}rem`, fontWeight: '700' } }}
-          />
+          <div
+            key={fontSize}
+            className={`absolute z-50 ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
+            onClick={scrollToCNTSection}
+          >
+            <ReactCurvedText
+              width={100 * scale}
+              height={100 * scale}
+              cx={50 * scale}
+              cy={50 * scale}
+              rx={33 * radius}
+              ry={33 * radius}
+              startOffset={0}
+              reversed={true}
+              text="Contact Me!"
+              textProps={{ style: { fill: currentColor, position: 'absolute', transition: 'fill 2s ease-in-out' } }}
+              tspanProps={{ style: { fontSize: `${scale * fontSize}rem`, fontWeight: '700' } }}
+            />
+          </div>
+          <div
+            className={`absolute ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
+          >
+            <ReactCurvedText
+              width={100 * scale}
+              height={100 * scale}
+              cx={50 * scale}
+              cy={50 * scale}
+              rx={33 * radius}
+              ry={33 * radius}
+              startOffset={'50%'}
+              reversed={true}
+              text="Contact Me!"
+              textProps={{ style: { fill: currentColor, position: 'absolute', transition: 'fill 2s ease-in-out' } }}
+              tspanProps={{ style: { fontSize: `${scale * fontSize}rem`, fontWeight: '700' } }}
+            />
+          </div>
         </div>
-        <div
-          className={`absolute ${animationStarted ? 'animate-spin animate-spin-slow' : ''}`}
-        >
-          <ReactCurvedText
-            width={100 * scale}
-            height={100 * scale}
-            cx={50 * scale}
-            cy={50 * scale}
-            rx={33 * radius}
-            ry={33 * radius}
-            startOffset={'50%'}
-            reversed={true}
-            text="Contact Me!"
-            textProps={{ style: { fill: currentColor, position: 'absolute', transition: 'fill 2s ease-in-out' }}}
-            tspanProps={{ style:{ fontSize: `${scale * fontSize}rem`, fontWeight: '700' } }}
-          />
-        </div>
-      </div>
-    </header>
-  );  
+      </header>
+    </div>
+  );
 }
 
 export default Header;
