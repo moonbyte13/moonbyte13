@@ -89,8 +89,8 @@ function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`flex flex-col-reverse self-center items-center rounded-lg sm:mx-5 my-5 p-4 w-fit lg:w-max ${
-              index % 2 === 0 ? 'lg:flex-row-reverse lg:self-start' : 'lg:flex-row lg:self-end'
+            className={`flex flex-col-reverse self-center items-center rounded-lg mb-45 p-4 w-fit lg:w-[100%] ${
+              index % 2 === 0 ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row lg:justify-end'
             }`}
           >
             <div
@@ -111,7 +111,7 @@ function Projects() {
               <h3 className="text-lg font-semibold" style={{ color: getColor(index) }}>
                 {project.name}
               </h3>
-              <p className="text-gray-400 flex-wrap">{project.description}</p>
+              <p className="text-gray-300 flex-wrap">{project.description}</p>
               <div className="mt-4">
                 <a
                   href={project.deployedLink}
@@ -135,7 +135,7 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.name}
-                className="h-[50vw] md:h-[35vw] lg:h-[25vw] rounded-lg"
+                className="w-[55rem] rounded-lg"
               />
             </div>
           </div>
