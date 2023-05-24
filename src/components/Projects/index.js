@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import githubIcon from './github.svg';
+import linkIcon from './link.svg';
 
 function Projects() {
   const [projects] = useState([
@@ -81,7 +83,7 @@ function Projects() {
 {/*       <p className="text-[0.6rem] md:text-[1.5rem] lg:text-[1.5rem] text-[#a4d4b4]">
         Curious what I've been working on?
       </p> */}
-      <p className="text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold">
+      <p className="text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold mb-15">
         Projects
       </p>
 
@@ -89,18 +91,18 @@ function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`flex flex-col-reverse self-center items-center rounded-lg mb-45 p-4 w-fit lg:w-[100%] ${
+            className={`flex flex-col-reverse self-center items-center rounded-md mb-45 p-4 w-fit lg:w-[100%] ${
               index % 2 === 0 ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row lg:justify-end'
             }`}
           >
             <div
-              className="bg-[#292929]/90 bg- p-4 z-5 w-[20rem] rounded-lg"
+              className="bg-[#0F0F0F]/90 p-4 z-5 w-[45rem] rounded-md"
               style={{
                 transform: isLGScreen ? `${index % 2 === 0 ? 'translateX(-30%)' : 'translateX(30%)'}` : 'translateY(-30%)',
-                borderTop: `2rem solid ${getColor(index)}`,
+                borderTop: `0.5rem solid ${getColor(index)}`,
               }}
             >
-              <p className='text-gray-300'>
+              <p className='capitalize text-white text-2xl'>
                 {project.tools.map((tool, i) => (
                   <React.Fragment key={i}>
                     {i > 0 && <span className="mx-1">-</span>}
@@ -108,18 +110,18 @@ function Projects() {
                   </React.Fragment>
                 ))}
               </p>
-              <h3 className="text-lg font-semibold" style={{ color: getColor(index) }}>
+              <h3 className="text-5xl font-bold py-5" style={{ color: getColor(index) }}>
                 {project.name}
               </h3>
-              <p className="text-gray-300 flex-wrap">{project.description}</p>
-              <div className="mt-4">
+              <p className="text-white flex-wrap text-xl">{project.description}</p>
+              <div className="mt-4 flex justify-between">
                 <a
                   href={project.deployedLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline mr-4"
                 >
-                  View Demo
+                  <img src={linkIcon} alt="Link" className="inline h-10 w-10" />
                 </a>
                 <a
                   href={project.githubLink}
@@ -127,7 +129,7 @@ function Projects() {
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline"
                 >
-                  View Code
+                  <img src={githubIcon} alt="GitHub" className="inline h-10 w-10" />
                 </a>
               </div>
             </div>
@@ -135,7 +137,7 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-[55rem] rounded-lg"
+                className="w-[55rem] rounded-md"
               />
             </div>
           </div>
