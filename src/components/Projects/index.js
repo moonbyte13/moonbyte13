@@ -91,7 +91,7 @@ function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`flex flex-col-reverse self-center items-center rounded-md mb-45 p-4 w-fit lg:w-[100%] ${
+            className={`flex flex-col-reverse self-center items-center rounded-md mb-96 p-4 w-fit lg:w-[100%] ${
               index % 2 === 0 ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row lg:justify-end'
             }`}
           >
