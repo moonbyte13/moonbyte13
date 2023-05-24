@@ -18,7 +18,7 @@ function Hero() {
   return (
     <section className="hero h-[100vh] grid grid-rows-12 mb-[10rem]">
       <div className='translate-y-[20vh] flex flex-col justify-center row-span-7'>
-        <h2 className='title h-[1em] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[28rem] text-[#89c4a7]'>Michael Frayne is...</h2>
+        <h2 className='title h-[1em] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[1rem] text-[#89c4a7]'>Michael Frayne is...</h2>
         <div className='flex justify-center'>
           <img 
             src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=800&size=113&duration=3000&pause=1000&color=B39DDB&center=true&vCenter=true&repeat=false&width=555&height=150&lines=MoonByte" 
