@@ -2,6 +2,10 @@
   font-family: 'Nunito', 'Roboto Mono', monospace;
 }
 
+html {
+  background-color: #0F0F0F;
+}
+
 :root {
   --color-p: #b39ddb;
   --color-g: #89c4a7;
