@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import './Scrollbar.css';
 import Portfolio from './components/Portfolio/';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
