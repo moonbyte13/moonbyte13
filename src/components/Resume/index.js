@@ -10,7 +10,7 @@ function Resume() {
   const isExtraSmallScreen = useMediaQuery({ maxWidth: 639 });
 
   const [resume] = useState({
-    url: 'https://drive.google.com/uc?export=download&id=1D4qqBiPsqNAtt9G1X2v6pJzo_ZJnJTci', // https://docs.google.com/document/d/13ytjrMbiyUUt0GLGhCWP8S_ohaoI9VqP7B52yytoWnw/edit?usp=sharing
+    url: 'https://drive.google.com/uc?export=download&id=14FbEljQPK_Hvw1p4vDrltEl_RCTyPYuU',
     skills: [
       'https://img.icons8.com/color/100/000000/html-5--v1.png',
       'https://img.icons8.com/color/100/000000/css3.png',
