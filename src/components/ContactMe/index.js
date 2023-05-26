@@ -121,8 +121,8 @@ function ContactForm () {
   ];
 
   return (
-    <div id='contactMeSection' className='pt-[15rem] z-10'>
-      <div className="flex flex-col justify-center items-center mb-[10rem]">
+    <div id='contactMeSection' className='mt-[15rem] z-10 bg-[#0F0F0F]/90'>
+      <div className="flex flex-col justify-center items-center my-[5rem]">
         <h2 className="text-4xl lg:text-5xl font-bold mb-5 self-center text-[#b39ddb]">
           Contact Me
         </h2>

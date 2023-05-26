@@ -16,7 +16,7 @@ function Hero() {
   };
 
   return (
-    <section className="hero h-[100vh] grid grid-rows-12 mb-[10rem]">
+    <section className="hero h-[100vh] grid grid-rows-12 mb-[10rem] bg-[#0F0F0F]/90">
       <div className='translate-y-[20vh] flex flex-col justify-center row-span-7'>
         <h2 className='title h-[1em] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[1rem] text-[#89c4a7]'>Michael Frayne is...</h2>
         <div className='flex justify-center'>
