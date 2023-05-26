@@ -49,8 +49,8 @@ function Resume() {
   }
 
   return (
-    <div id='resumeSect' className="flex flex-col items-center mb-[10rem]">
-      <h2 className="text-[1rem] md:text-[2rem] lg:text-[2rem] text-[#b39ddb] font-semibold w-fit">Resume</h2>
+    <div id='resumeSect' className="flex flex-col items-center mb-[10rem] py-[2rem] bg-[#0F0F0F]/90">
+      <h2 className="text-[1rem] md:text-[2rem] lg:text-[2.5rem] text-[#b39ddb] font-semibold w-fit">Resume</h2>
       <div id='resumeIcon' className='w-[5rem] sm:w-[7rem] md:w-[10rem] lg:w-[15rem] flex justify-center'>
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="192" height="192" viewBox="0,0,256,256" onClick={downloadResume} className='hover: cursor-pointer h-fit w-fit'>
         <g fill="#d6c17a" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(10.66667,10.66667)"><path d="M12,1c-1.304,0 -2.40341,0.837 -2.81641,2h-4.18359c-1.105,0 -2,0.895 -2,2v14c0,1.105 0.895,2 2,2h14c1.105,0 2,-0.895 2,-2v-14c0,-1.105 -0.895,-2 -2,-2h-4.18359c-0.413,-1.163 -1.51241,-2 -2.81641,-2zM12,3c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1h7v14h-14v-14h7c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM12,8c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM12,13c-2.185,0 -4,0.9088 -4,2.2168v0.7832h8v-0.7832c0,-1.308 -1.815,-2.2168 -4,-2.2168z"></path></g></g>
