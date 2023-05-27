@@ -3,8 +3,7 @@ import './style.css'
 
 function AboutMe() {
   const [aboutMe] = useState({
-    txt:
-      "I started painting as a hobby when I was little. I didn't know I had any talent. I believe talent is just a pursued interest. Anybody can do what I do. Just go back and put one little more happy tree in there. Everybody's different. Trees are different. Let them all be individuals. We'll put some happy little leaves here and there. These things happen automatically. All you have to do is just let them happen. Everyone wants to enjoy the good parts - but you have to build the framework first. Let's do that again. I'm gonna start with a little Alizarin crimson and a touch of Prussian blue. The very fact that you're aware of suffering is enough reason to be overjoyed that you're alive and can experience it. If you do too much it's going to lose its effectiveness. If you don't think every day is a good day - try missing a few. You'll see. In life you need colors. Fluff it up a little and hypnotize it. We can fix anything. Automatically, all of these beautiful, beautiful things will happen. There we go. Look at them little rascals.",
+    txt:"I discovered my passion for web development in high school and pursued it further during a coding bootcamp. By creating high-end gaming rigs and revamping outdated websites, I actively drive innovation and deliver visually appealing and user-friendly experiences. Through comprehensive planning and breaking down complex problems, I have honed my skills in Test Driven Development and gained proficiency in various programming languages.\n\nIn addition to technical expertise, I thrive on collaboration and fostering a positive work environment. Embracing the unique perspectives and experiences that each team member brings to a project, I believe in the power of diversity to fuel inclusive and innovative solutions. Simultaneously, my personal journey exploring my gender identity has deepened my understanding and respect for individual expression. Just as no single line of code is identical, I appreciate the richness of diverse viewpoints. By encouraging open communication and embracing diversity, I strive to create an environment where every voice is heard and valued.\n\nFeel free to explore my portfolio and resume below to learn more about my achievements and contributions. Let's connect and collaborate on creating impactful web solutions together.",
     imgUrl: 'https://i.imgur.com/G3ppIiG.png'
   });
   return (
@@ -18,7 +17,7 @@ function AboutMe() {
         <div className='text-center lg:text-start row-start-2 col-start-1 col-span-12 lg:row-start-1 lg:col-start-6 lg:col-span-6 p-2'>
           <p className="text-[1rem] md:text-[2rem] lg:text-[2.5rem] text-[#b39ddb] font-semibold">About Me</p>
           <p className='text-[2rem] md:text-[3rem] lg:text-[3rem] text-[#d6c17a] font-medium'>Welcome, I'm Michael!</p>
-          <p className="text-[0.7rem] md:text-[0.9rem] lg:text-[1rem] text-[#a4d4b4]">{aboutMe.txt}</p>
+          <p className="text-[0.7rem] md:text-[0.9rem] lg:text-[1rem] text-[#a4d4b4]" style={{ whiteSpace: 'pre-line' }}>{aboutMe.txt}</p>
         </div>
       </div>
     </div>
