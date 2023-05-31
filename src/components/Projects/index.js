@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import githubIcon from './github.svg';
 import linkIcon from './link.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 function Projects() {
   const [projects] = useState([
@@ -61,6 +64,14 @@ function Projects() {
     },
   ]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out-back'
+    });
+    AOS.refresh();
+  }, []);  
+
   const colors = ['#d6c17a', '#b39ddb', '#89c4a7'];
   const getColor = (index) => colors[index % colors.length];
 
@@ -83,15 +94,15 @@ function Projects() {
 {/*       <p className="text-[0.6rem] md:text-[1.5rem] lg:text-[1.5rem] text-[#a4d4b4]">
         Curious what I've been working on?
       </p> */}
-      <p className="text-[1rem] md:text-[2rem] lg:text-[2.5rem] text-[#b39ddb] font-semibold mt-15">
+      <p id='projectHeader' className="text-[1rem] md:text-[2rem] lg:text-[2.5rem] text-[#b39ddb] font-semibold mt-15">
         Projects
       </p>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col project-container">
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`flex flex-col-reverse self-center items-center rounded-md lg:my-24 p-4 w-fit lg:w-[100%] ${
+            className={` flex flex-col-reverse self-center items-center rounded-md lg:my-24 p-4 w-fit lg:w-[100%] ${
               index % 2 === 0 ? 'lg:flex-row-reverse lg:justify-end' : 'lg:flex-row lg:justify-end'
             }`}
           >
@@ -138,6 +149,11 @@ function Projects() {
                 src={project.image}
                 alt={project.name}
                 className="w-[55rem] rounded-md"
+                data-aos="fade-up"
+                data-aos-once="false"
+                data-aos-duration="1000"
+                data-aos-anchor='#projectHeader'
+                data-aos-anchor-placement="top-top"
               />
             </div>
           </div>
