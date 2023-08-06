@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './style.css'
 import picture from './linkedinImage2.jpg'
 
 function AboutMe() {
