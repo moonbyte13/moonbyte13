@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+// import './style.css';
 import githubIcon from './github.svg';
 import linkIcon from './link.svg';
 import AOS from 'aos';
@@ -149,11 +149,11 @@ function Projects() {
                 src={project.image}
                 alt={project.name}
                 className="w-[55rem] rounded-md"
-                data-aos="fade-up"
+                /* data-aos="fade-up"
                 data-aos-once="false"
                 data-aos-duration="1000"
                 data-aos-anchor='#projectHeader'
-                data-aos-anchor-placement="top-top"
+                data-aos-anchor-placement="top-top" */
               />
             </div>
           </div>
