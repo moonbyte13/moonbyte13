@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 function Footer() {
   
   const [footer] = useState({
-    link1: 'https://github.com/moonphase13',
-    link2: 'https://www.linkedin.com/in/michael-frayne-00b491247/',
+    link1: 'https://github.com/moonbyte13',
+    link2: 'https://www.linkedin.com/in/michaelfrayne00/',
     link3: 'https://twitter.com/Moonlight__1357',
   });
 
