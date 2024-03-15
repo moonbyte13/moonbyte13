@@ -14,7 +14,7 @@ function Projects() {
       tools: ['Bcrypt', 'Handlebars', 'MySQL2', 'Sequelize'],
       description: 'My CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.',
       deployedLink: 'https://my-tech-blog-c14.herokuapp.com',
-      githubLink: 'https://github.com/moonphase13/myTechBlog',
+      githubLink: 'https://github.com/moonbyte13/myTechBlog',
       image: 'https://i.imgur.com/s4DSOHj.png',
     },
     {
@@ -23,7 +23,7 @@ function Projects() {
       tools: ['React', 'Webpack', 'MongoDB', 'Mongoose', 'PWA'],
       description: 'A full PWA text editor that allows you to save your work and access it from anywhere.',
       deployedLink: 'https://my-own-text-editor.herokuapp.com',
-      githubLink: 'https://github.com/moonphase13/myTextEditor',
+      githubLink: 'https://github.com/moonbyte13/myTextEditor',
       image: 'https://i.imgur.com/itfeCmN.png',
     },
     {
@@ -41,8 +41,8 @@ function Projects() {
       name: 'CSS Snippet Cheatsheet',
       tools: ['CSS', 'HTML'],
       description: 'This is a cheatsheet for CSS snippets that I have found useful.',
-      deployedLink: 'https://moonphase13.github.io/CSS-Snippet-Cheatsheet/',
-      githubLink: 'https://github.com/moonphase13/CSS-Snippet-Cheatsheet',
+      deployedLink: 'https://moonbyte13.github.io/CSS-Snippet-Cheatsheet/',
+      githubLink: 'https://github.com/moonbyte13/CSS-Snippet-Cheatsheet',
       image: 'https://i.imgur.com/uUwl32Q.png',
     },
     {
@@ -50,8 +50,8 @@ function Projects() {
       name: 'Portfolio Demo',
       tools: ['HTML', 'CSS'],
       description: 'This is the first version of my portfolio from the bootcamp, showing my progress.',
-      deployedLink: 'https://moonphase13.github.io/portfolio-demo-C2/',
-      githubLink: 'https://github.com/moonphase13/portfolio-demo-C2',
+      deployedLink: 'https://moonbyte13.github.io/portfolio-demo-C2/',
+      githubLink: 'https://github.com/moonbyte13/portfolio-demo-C2',
       image: 'https://i.imgur.com/6jKcYye.png',
     },
     {
@@ -60,7 +60,7 @@ function Projects() {
       tools: ['React', 'MongoDB', 'Mongoose', 'Express', 'GraphQL', 'Apollo', 'JWT', 'Bcrypt'],
       description: 'A meme generator app that is a fun and intuitive platform letting you discover and collect the latest and greatest memes from Giphy.',
       deployedLink: 'https://memes-against-humanity.herokuapp.com',
-      githubLink: 'https://github.com/moonphase13/memes-against-humanity',
+      githubLink: 'https://github.com/moonbyte13/memes-against-humanity',
       image: 'https://i.imgur.com/zKhA50S.png',
     },
   ]);
