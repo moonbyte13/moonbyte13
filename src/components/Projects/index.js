@@ -31,8 +31,9 @@ function Projects() {
       name: 'Tune In',
       tools: ['Server Side APIs', 'CSS', 'HTML', 'JavaScript'],
       description: 'An app to create an opportunity for users to explore different radio stations. The main goal is to provide an easy, efficient radio browser for everyone to use that also includes the top 100 hits.',
-      deployedLink: 'https://moonbyte13.github.io/Project-Tune-in-Team-5/',
-      githubLink: 'https://github.com/moonbyte13/Project-Tune-in-Team-5',
+      subDescription:'Note: Unfortunately, the API we used is depreciated and no longer works. I have left the deployed link for you to see the code.',
+      deployedLink: 'https://moonphase13.github.io/Project-Tune-in-Team-5/',
+      githubLink: 'https://github.com/moonphase13/Project-Tune-in-Team-5',
       image: 'https://i.imgur.com/3nqP4KQ.png',
     },
     {
@@ -125,6 +126,7 @@ function Projects() {
                 {project.name}
               </h3>
               <p className="text-white flex-wrap text-[0.5rem] sm:text-[0.8rem] md:text-[1.2rem] lg:text[1.5rem]">{project.description}</p>
+              <p className="text-white flex-wrap text-[0.5rem] sm:text-[0.8rem] md:text-[1.2rem] lg:text[1.5rem] pt-2">{project.subDescription}</p>
               <div className="mt-4 flex justify-between">
                 <a
                   href={project.deployedLink}
