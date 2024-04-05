@@ -21,7 +21,7 @@ function Hero() {
         <h2 className='title h-[1em] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[1rem] text-[#89c4a7]'>Michael Frayne is...</h2>
         <div className='flex justify-center'>
           <img 
-            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=800&size=113&duration=3000&pause=1000&color=B39DDB&center=true&vCenter=true&repeat=false&width=555&height=150&lines=MoonByte" 
+            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=800&size=113&duration=3000&pause=1000&color=B39DDB&center=true&vCenter=true&repeat=false&width=555&height=150&lines=moonphase" 
             alt="Typing SVG" 
             className='h-[4em] sm:h-[6em] md:h-[10em] lg:h-[13em]'
           />
