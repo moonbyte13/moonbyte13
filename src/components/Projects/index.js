@@ -32,8 +32,8 @@ function Projects() {
       tools: ['Server Side APIs', 'CSS', 'HTML', 'JavaScript'],
       description: 'An app to create an opportunity for users to explore different radio stations. The main goal is to provide an easy, efficient radio browser for everyone to use that also includes the top 100 hits.',
       subDescription:'Note: Unfortunately, the API we used is depreciated and no longer works. I have left the deployed link for you to see the code.',
-      deployedLink: 'https://moonphase13.github.io/Project-Tune-in-Team-5/',
-      githubLink: 'https://github.com/moonphase13/Project-Tune-in-Team-5',
+      deployedLink: 'https://moonbyte13.github.io/Project-Tune-in-Team-5/',
+      githubLink: 'https://github.com/moonbyte13/Project-Tune-in-Team-5',
       image: 'https://i.imgur.com/3nqP4KQ.png',
     },
     {
