@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import { Dialog, Transition } from '@headlessui/react';
+import Modal from 'react-modal';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/solid';
 
 function ContactForm () {
@@ -164,6 +164,32 @@ function ContactForm () {
           </button>
         </form>
         {isModalOpen && (
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeModal}
+            className="modal-box"
+            overlayClassName="modal-overlay"
+          >
+            <div className="flex justify-end">
+              <button onClick={closeModal} className='bg-transparent border-none'>
+                <XCircleIcon className="h-6 w-6 text-gray-100 hover:text-gray-800 border-full" />
+              </button>
+            </div>
+            <div className="text-center">
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-900">
+                <CheckCircleIcon className="h-6 w-6 text-green-100" />
+              </div>
+              <h3 className="text-lg font-medium leading-6 mt-4 text-gray-100">
+                {modalTitle}
+              </h3>
+              <div className="mt-2">
+                <p className="text-sm text-gray-100">{modalMessage}</p>
+              </div>
+            </div>
+          </Modal>
+        )}
+
+        {/* {isModalOpen && (
           <Transition.Root show={isModalOpen} as={React.Fragment}>
             <Dialog
               onClose={closeModal}
@@ -193,7 +219,7 @@ function ContactForm () {
               </div>
             </Dialog>
           </Transition.Root>
-        )}
+        )} */}
       </div>
     </div>
   );  
