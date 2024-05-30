@@ -12,26 +12,15 @@ function Resume() {
   const [resume] = useState({
     url: 'https://drive.google.com/uc?export=download&id=1__n6Zrop40hye2j2Jo4qJvQnUS7MIYsQ',
     skills: [
-      'https://img.icons8.com/color/100/000000/html-5--v1.png',
-      'https://img.icons8.com/color/100/000000/css3.png',
-      'https://img.icons8.com/color/100/000000/javascript--v1.png',
-      'https://img.icons8.com/color/100/000000/git.png',
-      'https://img.icons8.com/color/100/000000/npm.png',
-      'https://img.icons8.com/color/100/000000/nodejs.png',
-      'https://img.icons8.com/color/100/000000/api-settings.png',
-      'https://i.imgur.com/CcFplDc.png',
-      'https://handlebarsjs.com/images/handlebars_logo.png',
-      'https://img.icons8.com/color/100/000000/react-native.png',
-      'https://img.icons8.com/color/100/000000/sql.png',
-      'https://img.icons8.com/color/100/000000/mysql-logo.png',
-      'https://i.imgur.com/xCAr5Vd.png',
-      'https://img.icons8.com/color/100/000000/mongodb.png',
-      'https://img.icons8.com/color/100/000000/graphql.png',
-      'https://img.icons8.com/color/100/000000/apollo.png',
-      'https://img.icons8.com/color/100/000000/bootstrap.png',
-      'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-      'https://raw.githubusercontent.com/unocss/unocss/main/playground/public/icon-gray.svg',
-      'https://img.icons8.com/color/100/000000/heroku.png',
+      'https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/0/0e/Adobe_Audition_CC_icon_%282020%29.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/7/73/Calligrakrita-base.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/4d/DaVinci_Resolve_Studio.png',
+      'https://upload.wikimedia.org/wikipedia/commons/8/8d/Canon_logo.svg',
     ],
 
     currentlyLearning: [
@@ -103,7 +92,7 @@ function Resume() {
           })}
         </div>
       </div>
-      <label className='text-[0.6rem] md:text-[1.5rem] lg:text-[1.5rem] text-[#89c4a7] font-light w-fit'>Currently Learning</label>
+      {/* <label className='text-[0.6rem] md:text-[1.5rem] lg:text-[1.5rem] text-[#89c4a7] font-light w-fit'>Currently Learning</label>
       <div className={`w-full grid gap-2 p-5 ${isLargeScreen ? 'grid-cols-9 grid-rows-1' : isMediumScreen ? 'grid-cols-7 grid-rows-auto' : isSmallScreen ? 'grid-cols-5 grid-rows-auto' : 'grid-cols-3 grid-rows-auto'}`}>
           {resume.currentlyLearning.map((skill, index) => {
             let rowStart, colStart, iconHeight;
@@ -142,7 +131,7 @@ function Resume() {
               </div>
             );
           })}
-        </div>
+        </div> */}
     </div>
   );
 }

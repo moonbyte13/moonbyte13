@@ -1,8 +1,10 @@
-# My portfolio
+# My photography portfolio
 
-<a href='https://moonbyte13.github.io/moonbyte13/' target='_blank'>Link 🔗</a>
+#### **Note** replace link
+<a href='/' target='_blank'>Link 🔗</a>
 
 ### Hi there 👋
+#### **Note** replace link
 ![](https://i.giphy.com/GTgpQAVs0xeuMybJMd.gif)
 <!--
 **moonbyte13/moonbyte13** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

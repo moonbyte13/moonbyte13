@@ -6,7 +6,8 @@ import scroll from 'scroll';
 
 function Header() {
 
-  const fontSizes = [0.85, 0.9, 1];
+  
+  // useMemo(() => { const fontSizes = [0.85, 0.9, 1]; return fontSizes});
   const [radius, setRadius] = useState(0.5);
   const [scale, setScale] = useState(1);
   const [fontSize, setFontSize] = useState(1);
@@ -77,8 +78,11 @@ function Header() {
       timeout = setTimeout(() => func.apply(this, args), wait);
     };
   }
-  
+
   useLayoutEffect(() => {
+
+    const fontSizes = [0.85, 0.9, 1];
+
     const debouncedHandleResize  = debounce(() => {
       const screenWidth = window.innerWidth;
       let newScale;

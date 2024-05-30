@@ -3,7 +3,7 @@ import Header from '../Header/';
 import Hero from '../Hero/';
 import Footer from '../Footer/';
 import AboutMe from '../AboutMe/';
-import Projects from '../Projects/';
+import Pictures from '../Pictures/';
 import ContactMe from '../ContactMe/';
 import Resume from '../Resume/';
 
@@ -16,7 +16,7 @@ function Portfolio() {
         <Hero />
         <AboutMe />
         <Resume />
-        <Projects />
+        <Pictures />
         <ContactMe />
       </main>
       <Footer />

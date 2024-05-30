@@ -21,14 +21,14 @@ function Hero() {
         <h2 className='title h-[1em] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] leading-[1rem] text-[#89c4a7]'>Michael Frayne is...</h2>
         <div className='flex justify-center'>
           <img 
-            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=800&size=113&duration=3000&pause=1000&color=B39DDB&center=true&vCenter=true&repeat=false&width=555&height=150&lines=moonbyte" 
+            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=800&size=113&duration=3000&pause=1000&color=B39DDB&center=true&vCenter=true&repeat=false&width=555&height=150&lines=Moonbyte" 
             alt="Typing SVG" 
             className='h-[4em] sm:h-[6em] md:h-[10em] lg:h-[13em]'
           />
         </div>
         <div className='flex justify-center'>
           <img 
-            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=700&size=48&duration=2000&pause=2000&color=89C4A7&center=true&vCenter=true&width=750&height=50&lines=Developer%2C+Debugger%2C+Designer" 
+            src="https://readme-typing-svg.herokuapp.com?font=Nunito&weight=700&size=48&duration=2000&pause=2000&color=89C4A7&center=true&vCenter=true&width=900&height=50&lines=Photographer%2C+Videographer%2C+Editor" 
             alt="Typing SVG" 
             className='h-[1.1em] sm:h-[1.5rem] md:h-[2.2em] lg:h-[3.3em]'
           />
